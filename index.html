@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="QuataPrism delivers software networking expertise across Layer 1 to Layer 4, customer operating systems, network OS, routing stack, SONiC, FRR, Linux Kernel, and OpenConfig-driven telemetry and configuration."
+    />
+    <title>QuataPrism | Software Networking Expertise</title>
+    <style>
+      :root {
+        --bg: #07111f;
+        --bg-alt: #0d1b2a;
+        --panel: rgba(14, 27, 42, 0.8);
+        --panel-strong: rgba(20, 38, 58, 0.95);
+        --line: rgba(148, 163, 184, 0.18);
+        --text: #e6eef9;
+        --muted: #a8bdd7;
+        --primary: #7dd3fc;
+        --primary-strong: #38bdf8;
+        --secondary: #a78bfa;
+        --success: #34d399;
+        --warning: #fbbf24;
+        --shadow: 0 30px 80px rgba(2, 6, 23, 0.6);
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 25%),
+          radial-gradient(circle at bottom right, rgba(167, 139, 250, 0.18), transparent 28%),
+          linear-gradient(180deg, var(--bg) 0%, #0b1420 100%);
+        font-family: Inter, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(20px);
+        background: rgba(7, 17, 31, 0.7);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+        gap: 24px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .brand-mark {
+        width: 14px;
+        height: 14px;
+        border-radius: 4px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        box-shadow: 0 0 16px rgba(125, 211, 252, 0.9);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: 1px solid rgba(125, 211, 252, 0.35);
+        background: rgba(56, 189, 248, 0.08);
+        border-radius: 999px;
+        color: var(--primary);
+        padding: 10px 18px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      main {
+        padding-bottom: 80px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.35fr 0.95fr;
+        align-items: center;
+        gap: 48px;
+        padding: 92px 0 44px;
+      }
+
+      .eyebrow {
+        color: var(--primary);
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 5vw, 5rem);
+        line-height: 1.05;
+        margin: 0 0 20px;
+        letter-spacing: -0.06em;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+        margin: 0 0 18px;
+      }
+
+      .hero p {
+        color: var(--muted);
+        font-size: 1.08rem;
+        max-width: 620px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 30px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 22px;
+        border-radius: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        font-weight: 700;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button.primary {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #02101a;
+        border-color: transparent;
+      }
+
+      .button.secondary {
+        color: var(--text);
+        background: rgba(15, 23, 42, 0.7);
+      }
+
+      .hero-card {
+        position: relative;
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(9, 18, 31, 0.95));
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .graph {
+        border-radius: 20px;
+        background:
+          linear-gradient(180deg, rgba(56, 189, 248, 0.12), rgba(31, 41, 55, 0.02)),
+          rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(125, 211, 252, 0.2);
+        padding: 18px;
+      }
+
+      .graph-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+        color: var(--muted);
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .dots {
+        display: flex;
+        gap: 6px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .dot:nth-child(1) { background: #f87171; }
+      .dot:nth-child(2) { background: #fbbf24; }
+      .dot:nth-child(3) { background: #34d399; }
+
+      .stack-bars {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        align-items: end;
+        gap: 12px;
+        height: 190px;
+        padding-top: 10px;
+      }
+
+      .bar-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        height: 100%;
+      }
+
+      .bar {
+        width: 100%;
+        border-radius: 12px 12px 6px 6px;
+        background: linear-gradient(180deg, var(--primary), rgba(56, 189, 248, 0.35));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      }
+
+      .bar:nth-child(1) { height: 28%; }
+      .bar:nth-child(2) { height: 42%; }
+      .bar:nth-child(3) { height: 64%; }
+      .bar:nth-child(4) { height: 85%; }
+      .bar:nth-child(5) { height: 100%; }
+
+      .bar-wrap span {
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .stat {
+        background: rgba(15, 23, 42, 0.7);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px 14px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      section {
+        padding-top: 56px;
+      }
+
+      .section-intro {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 28px;
+      }
+
+      .section-intro p {
+        max-width: 560px;
+        color: var(--muted);
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .feature-card,
+      .solution-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 24px;
+        box-shadow: 0 18px 32px rgba(2, 6, 23, 0.2);
+      }
+
+      .icon {
+        width: 46px;
+        height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(125, 211, 252, 0.12), rgba(167, 139, 250, 0.12));
+        border: 1px solid rgba(125, 211, 252, 0.15);
+        margin-bottom: 16px;
+        font-size: 1.25rem;
+      }
+
+      .feature-card h3,
+      .solution-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.25rem;
+      }
+
+      .feature-card p,
+      .solution-card p,
+      .layer-list li,
+      .contact-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .layer-matrix {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .layer-panel {
+        background: var(--panel-strong);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        overflow: hidden;
+      }
+
+      .layer-panel .header {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(8, 16, 27, 0.8);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--primary);
+      }
+
+      .layer-list {
+        list-style: none;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .layer-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+      }
+
+      .layer-list li:last-child {
+        border-bottom: 0;
+      }
+
+      .highlight-row {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 24px;
+        margin-top: 32px;
+      }
+
+      .quote-box {
+        background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(167, 139, 250, 0.08));
+        border: 1px solid rgba(125, 211, 252, 0.15);
+        border-radius: 24px;
+        padding: 26px;
+      }
+
+      .quote-box p {
+        margin: 0;
+        font-size: 1.1rem;
+        color: var(--text);
+      }
+
+      .mini-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .mini-list li {
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        color: var(--muted);
+        background: rgba(15, 23, 42, 0.5);
+      }
+
+      .contact {
+        padding-top: 64px;
+      }
+
+      .contact-card {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 24px;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(11, 18, 29, 0.95));
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 30px 28px;
+      }
+
+      .contact-card h3 {
+        margin: 0 0 12px;
+        font-size: clamp(1.8rem, 2vw, 2.6rem);
+      }
+
+      .contact-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 26px 0 42px;
+        color: var(--muted);
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .highlight-row,
+        .contact-card,
+        .grid-3,
+        .layer-matrix {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 60px;
+        }
+
+        .stats-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="QuataPrism home">
+          <span class="brand-mark"></span>
+          <span>QuataPrism</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#expertise">Expertise</a>
+          <a href="#stack">Stack</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#telemetry">Telemetry</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <span class="pill">Networking Systems</span>
+      </div>
+    </header>
+
+    <main id="top" class="container">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Software networking company</div>
+          <h1>Building resilient networking from Layer 1 to Layer 3 and software solutions</h1>
+          <p>
+            QuataPrism helps enterprises, cloud operators, and networking teams design,
+            validate, and optimize the software stack behind modern networks — from silicon-facing
+            physical interfaces to application-aware routing and policy enforcement.
+          </p>
+
+          <div class="cta-row">
+            <a class="button primary" href="#solutions">Explore capabilities</a>
+            <a class="button secondary" href="#contact">Contact us</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Networking stack overview">
+          <div class="graph">
+            <div class="graph-header">
+              <span>Network Stack</span>
+              <div class="dots" aria-hidden="true">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+            <div class="stack-bars" aria-label="Network stack bars">
+              <div class="bar-wrap"><div class="bar" style="height: 28%"></div><span>L1</span></div>
+              <div class="bar-wrap"><div class="bar" style="height: 42%"></div><span>L2</span></div>
+              <div class="bar-wrap"><div class="bar" style="height: 64%"></div><span>L3</span></div>
+              <div class="bar-wrap"><div class="bar" style="height: 86%"></div><span>L4</span></div>
+              <div class="bar-wrap"><div class="bar" style="height: 100%"></div><span>Ops</span></div>
+            </div>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat">
+              <strong>Layer 1-4</strong>
+              <span>Full-stack networking</span>
+            </div>
+            <div class="stat">
+              <strong>SONiC</strong>
+              <span>Open networking</span>
+            </div>
+            <div class="stat">
+              <strong>FRR</strong>
+              <span>Routing expertise</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="expertise">
+        <div class="section-intro">
+          <div>
+            <div class="eyebrow">Core expertise</div>
+            <h2>Modern networking software built for production.</h2>
+          </div>
+          <p>
+            From physical media and switching logic to routing policy, service delivery, and network operations,
+            we engineer the control plane, data plane interfaces, and operational tooling that keep networks stable and observable.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="feature-card">
+            <div class="icon" aria-hidden="true">↔</div>
+            <h3>Layer 1 to Layer 4</h3>
+            <p>
+              Expertise across physical connectivity, L2 switching, L3 routing, policy, and transport-aware
+              service logic with a focus on performance and deterministic behavior.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon" aria-hidden="true">▣</div>
+            <h3>Customer OS / Network OS</h3>
+            <p>
+              Operating system integration and orchestration for customer environments, network appliances,
+              and software-defined network stacks that need long-term maintainability.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon" aria-hidden="true">◎</div>
+            <h3>Routing stack strategy</h3>
+            <p>
+              Architecture and optimization for routing stacks, protocol behavior, route policy, and control
+              plane resiliency across scale and multi-vendor deployments.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="stack">
+        <div class="section-intro">
+          <div>
+            <div class="eyebrow">Stack coverage</div>
+            <h2>Full network software stack across the operating model.</h2>
+          </div>
+        </div>
+
+        <div class="layer-matrix">
+          <div class="layer-panel">
+            <div class="header">Data plane & transport</div>
+            <ul class="layer-list">
+              <li>Layer 1: physical interfaces, optics, link health, timing, and signal integrity</li>
+              <li>Layer 2: VLANs, bridging, switching, spanning tree, link aggregation, and loop prevention</li>
+              <li>Layer 3: BGP, OSPF, routing policy, route learning, and path selection</li>
+              <li>Layer 4: service-awareness, flow handling, policy, and traffic optimization</li>
+            </ul>
+          </div>
+
+          <div class="layer-panel">
+            <div class="header">Operating system & control plane</div>
+            <ul class="layer-list">
+              <li>Customer operating system design and hardening across networking platforms</li>
+              <li>Network OS integration for packet forwarding, control logic, and service lifecycle</li>
+              <li>Linux kernel tuning for networking behavior, performance, and observability</li>
+              <li>Cross-platform compatibility for modern programmable network systems</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-row">
+          <div class="quote-box">
+            <p>
+              “A strong networking stack is not just routing tables and ports — it is dependable behavior,
+              measurable telemetry, and operational clarity from silicon to service.”
+            </p>
+          </div>
+
+          <ul class="mini-list">
+            <li>SONiC contribution</li>
+            <li>FRR integration</li>
+            <li>Linux Kernel participation</li>
+            <li>Open network ecosystem</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="solutions">
+        <div class="section-intro">
+          <div>
+            <div class="eyebrow">Solutions</div>
+            <h2>Network solutions designed for scale, trust, and automation.</h2>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="solution-card">
+            <div class="icon" aria-hidden="true">✦</div>
+            <h3>Routing stack modernization</h3>
+            <p>
+              Design and optimization of routing implementations for BGP, policy control, convergence, and scale-out deployments.
+            </p>
+          </article>
+
+          <article class="solution-card">
+            <div class="icon" aria-hidden="true">⌁</div>
+            <h3>OS and platform enablement</h3>
+            <p>
+              Platform bring-up, feature enablement, and operational support across customer OS and network OS environments.
+            </p>
+          </article>
+
+          <article class="solution-card">
+            <div class="icon" aria-hidden="true">◌</div>
+            <h3>Network visibility & automation</h3>
+            <p>
+              Tools and workflows that connect devices, telemetry, and configuration into a unified view for faster troubleshooting.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="telemetry">
+        <div class="section-intro">
+          <div>
+            <div class="eyebrow">Visualization & configuration</div>
+            <h2>OpenConfig and telemetry-driven network management.</h2>
+          </div>
+          <p>
+            Transform device state into actionable visibility with model-driven configuration, real-time telemetry,
+            and automation that fits modern network operations.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="feature-card">
+            <div class="icon" aria-hidden="true">◫</div>
+            <h3>OpenConfig</h3>
+            <p>
+              Model-based device configuration for consistent, vendor-neutral network management and automation workflows.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon" aria-hidden="true">▤</div>
+            <h3>Telemetry</h3>
+            <p>
+              Real-time device health and flow visibility to understand behavior, detect degradation, and protect service continuity.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon" aria-hidden="true">⟡</div>
+            <h3>Visualization</h3>
+            <p>
+              Operational dashboards and interfaces that simplify complex network state into clear, actionable intelligence.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-card">
+          <div>
+            <div class="eyebrow">QuataPrism</div>
+            <h3>Software networking expertise for modern infrastructure.</h3>
+            <p>
+              Active contributor to SONiC, FRR, and the Linux Kernel ecosystem, with a focus on routing stack,
+              platform enablement, and reliable device configuration and telemetry systems.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="button primary" href="mailto:hello@quataprism.com">hello@quataprism.com</a>
+            <a class="button secondary" href="https://www.quataprism.com" target="_blank" rel="noreferrer">quataprism.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © 2026 QuataPrism. Software networking expertise across Layer 1 to Layer 4.
+      </div>
+    </footer>
+  </body>
+</html>
