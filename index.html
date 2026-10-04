@@ -445,6 +445,41 @@
         font-size: clamp(1.8rem, 2vw, 2.6rem);
       }
 
+      .portfolio-spotlight {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .portfolio-item {
+        background: rgba(15, 23, 42, 0.72);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 22px 18px;
+        box-shadow: 0 16px 28px rgba(2, 6, 23, 0.18);
+      }
+
+      .portfolio-item .tag {
+        display: inline-block;
+        color: var(--primary);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .portfolio-item h3 {
+        margin: 0 0 10px;
+        font-size: 1.2rem;
+      }
+
+      .portfolio-item p {
+        margin: 0;
+        color: var(--muted);
+      }
+
       .contact-actions {
         display: flex;
         justify-content: flex-end;
@@ -463,7 +498,8 @@
         .highlight-row,
         .contact-card,
         .grid-3,
-        .layer-matrix {
+        .layer-matrix,
+        .portfolio-spotlight {
           grid-template-columns: 1fr;
         }
 
@@ -494,10 +530,11 @@
           <a href="#stack">Stack</a>
           <a href="#solutions">Solutions</a>
           <a href="#telemetry">Telemetry</a>
+          <a href="company-portfolio.html">Company Portfolio</a>
           <a href="#contact">Contact</a>
         </nav>
 
-        <span class="pill">Networking Systems</span>
+        <a href="company-portfolio.html" class="pill" aria-label="View company portfolio">Company Portfolio</a>
       </div>
     </header>
 
@@ -513,7 +550,8 @@
           </p>
 
           <div class="cta-row">
-            <a class="button primary" href="#solutions">Explore capabilities</a>
+            <a class="button primary" href="company-portfolio.html">View company portfolio</a>
+            <a class="button secondary" href="#solutions">Explore capabilities</a>
             <a class="button secondary" href="#contact">Contact us</a>
           </div>
         </div>
@@ -551,6 +589,38 @@
               <span>Routing expertise</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <div class="section-intro">
+          <div>
+            <div class="eyebrow">Portfolio</div>
+            <h2>Customer-focused solutions across software networking, embedded systems, and AI operations.</h2>
+          </div>
+          <p>
+            QuantaPrism helps customers scale modern networking platforms with reliable Linux integration, routing and switching innovation, automation, and telemetry-driven operations.
+          </p>
+        </div>
+
+        <div class="portfolio-spotlight">
+          <article class="portfolio-item">
+            <span class="tag">Routing</span>
+            <h3>Datacenter and Fabric</h3>
+            <p>High-performance switching, MPLS, segment routing, VXLAN, and policy-rich topology design for modern infrastructure.</p>
+          </article>
+
+          <article class="portfolio-item">
+            <span class="tag">Platform</span>
+            <h3>Embedded Linux</h3>
+            <p>Board bring-up, bootloader integration, ARM support, device drivers, and Linux user-space portability for production hardware.</p>
+          </article>
+
+          <article class="portfolio-item">
+            <span class="tag">Automation</span>
+            <h3>Telemetry and AI</h3>
+            <p>YANG, Netconf, OpenConfig, gNMI, gRPC, AI-assisted operations, and Python-driven automation for observability.</p>
+          </article>
         </div>
       </section>
 
