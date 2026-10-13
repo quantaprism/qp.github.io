@@ -7,177 +7,398 @@
       name="description"
       content="QuantaPrism Network is a software networking company focused on Linux, routing, switching, datacenter, embedded systems, automation, AI, and platform enablement."
     />
-    <title>QuantaPrism Network | Company Portfolio</title>
+    <title>QuantaPrism | Software Portfolio</title>
     <style>
       :root {
-        --bg: #07111d;
-        --bg-soft: #0d1b2a;
-        --panel: rgba(16, 26, 39, 0.9);
-        --panel-strong: #0f1d2c;
-        --card: rgba(12, 20, 31, 0.9);
-        --line: rgba(148, 163, 184, 0.2);
-        --text: #edf5ff;
-        --muted: #b2c3d5;
-        --primary: #7dd3fc;
-        --primary-strong: #38bdf8;
-        --secondary: #a78bfa;
-        --accent: #5eead4;
-        --shadow: 0 30px 60px rgba(2, 6, 23, 0.5);
+        --bg: #000;
+        --fg: #fff;
+        --font: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        --gap: 160px;
       }
 
       * { box-sizing: border-box; }
+
       html { scroll-behavior: smooth; }
+
       body {
         margin: 0;
-        font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        color: var(--text);
-        background:
-          radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 28%),
-          radial-gradient(circle at bottom right, rgba(167, 139, 250, 0.16), transparent 25%),
-          linear-gradient(180deg, #07111d 0%, #0b1522 100%);
-        line-height: 1.7;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: var(--font);
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
       }
+
       a { color: inherit; text-decoration: none; }
       img { max-width: 100%; display: block; }
-      .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
 
+      .container {
+        width: min(1120px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      /* Header */
       header {
         position: sticky;
         top: 0;
         z-index: 50;
-        backdrop-filter: blur(14px);
-        background: rgba(7, 17, 29, 0.72);
-        border-bottom: 1px solid var(--line);
+        background: var(--bg);
+        border-bottom: 1px solid var(--fg);
       }
+
       .nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 74px;
-        gap: 20px;
+        min-height: 72px;
+        gap: 24px;
       }
+
       .brand {
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        font-weight: 800;
       }
+
       .brand-mark {
-        width: 42px; height: 42px; border-radius: 12px; overflow: hidden; object-fit: cover; box-shadow: 0 10px 24px rgba(125, 211, 252, 0.2);
+        width: 36px;
+        height: 36px;
+        object-fit: cover;
+        filter: grayscale(1) contrast(1.2) invert(1);
       }
+
       .brand-text {
         display: flex;
         flex-direction: column;
         line-height: 1.1;
       }
-      .brand-text strong { letter-spacing: 0.06em; text-transform: uppercase; }
-      .brand-text span { color: var(--muted); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
+
+      .brand-text strong {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .brand-text span {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 22px;
-        color: var(--muted);
-        font-size: 0.93rem;
+        gap: 28px;
+        font-size: 14px;
       }
-      .nav-links a:hover { color: var(--text); }
-      .pill {
-        display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 10px 16px;
-        border: 1px solid rgba(125, 211, 252, 0.3); background: rgba(56, 189, 248, 0.08); color: var(--primary);
-        font-size: 0.73rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;
-      }
-      main { padding-bottom: 70px; }
-      .hero {
-        display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 32px; padding: 80px 0 24px;
-      }
-      .eyebrow {
-        color: var(--primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 18px; display: inline-block;
-      }
-      h1, h2, h3 { margin: 0 0 16px; letter-spacing: -0.04em; }
-      h1 { font-size: clamp(2.8rem, 5vw, 5rem); line-height: 1.04; }
-      h2 { font-size: clamp(2.1rem, 3vw, 3rem); line-height: 1.15; }
-      p { margin: 0; color: var(--muted); }
-      .cta-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
-      .button {
-        display: inline-flex; justify-content: center; align-items: center; border-radius: 12px; font-weight: 700; padding: 14px 20px; border: 1px solid var(--line); transition: transform 0.2s ease;
-      }
-      .button:hover { transform: translateY(-1px); }
-      .button.primary {
-        background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #02101a; border-color: transparent;
-      }
-      .button.secondary { background: rgba(15, 23, 42, 0.78); color: var(--text); }
-      .metrics {
-        display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 32px;
-      }
-      .metric {
-        background: rgba(15, 23, 42, 0.68);
-        border: 1px solid var(--line); border-radius: 18px; padding: 18px 16px;
-      }
-      .metric strong { display: block; font-size: 1.5rem; margin-bottom: 4px; }
-      .metric span { color: var(--muted); font-size: 0.82rem; }
 
-      .hero-panel {
-        background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(10, 17, 27, 0.96));
-        border: 1px solid var(--line); border-radius: 24px; padding: 22px; box-shadow: var(--shadow);
+      .nav-links a:hover { text-decoration: underline; }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid var(--fg);
+        padding: 8px 16px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
       }
-      .panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; }
+
+      .pill:hover { background: var(--fg); color: var(--bg); }
+
+      /* Type */
+      .eyebrow {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+
+      h1 {
+        font-size: clamp(44px, 5.6vw, 76px);
+        font-weight: 700;
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+        margin: 0 0 32px;
+      }
+
+      h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+        margin: 0 0 12px;
+      }
+
+      p { margin: 0; }
+
+      /* Layout */
+      section {
+        padding: var(--gap) 0;
+        border-top: 1px solid var(--fg);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        align-items: center;
+        gap: 80px;
+        border-top: 0;
+      }
+
+      .hero p {
+        font-size: 19px;
+        max-width: 600px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 48px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 24px;
+        border: 1px solid var(--fg);
+        font-size: 15px;
+        font-weight: 500;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .button.primary { background: var(--fg); color: var(--bg); }
+      .button.primary:hover { background: var(--bg); color: var(--fg); }
+      .button.secondary:hover { background: var(--fg); color: var(--bg); }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 64px;
+        padding-top: 24px;
+        border-top: 1px solid var(--fg);
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        white-space: nowrap;
+      }
+
+      .metric span { font-size: 13px; }
+
+      /* Hero panel / slider */
+      .hero-panel {
+        border: 1px solid var(--fg);
+        padding: 32px;
+      }
+
+      .panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
       .panel-dots { display: flex; gap: 6px; }
-      .dot { width: 10px; height: 10px; border-radius: 50%; }
-      .dot:nth-child(1) { background: #f87171; }
-      .dot:nth-child(2) { background: #fbbf24; }
-      .dot:nth-child(3) { background: #34d399; }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 1px solid var(--fg);
+      }
+
+      .dot:first-child { background: var(--fg); }
+
       .slide {
         display: none;
-        background: linear-gradient(180deg, rgba(56, 189, 248, 0.08), rgba(31, 41, 55, 0.02));
-        border: 1px solid rgba(125, 211, 252, 0.15); border-radius: 20px; padding: 22px 20px; min-height: 280px;
+        min-height: 300px;
+        padding-top: 24px;
+        border-top: 1px solid var(--fg);
       }
-      .slide.active { display: block; }
-      .slide-tag { color: var(--accent); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 800; }
-      .slide h3 { font-size: 1.8rem; margin: 14px 0 12px; }
-      .slide ul { margin: 16px 0 0; padding-left: 18px; color: var(--text); }
-      .slide li { margin-bottom: 6px; color: var(--muted); }
-      .slider-dots { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
-      .slider-dots button {
-        width: 10px; height: 10px; border-radius: 999px; border: none; background: rgba(148, 163, 184, 0.35); cursor: pointer; padding: 0;
-      }
-      .slider-dots button.active { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
 
-      section { padding-top: 60px; }
-      .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
-      .section-head p { max-width: 650px; }
-      .overview-grid, .portfolio-grid, .stack-grid, .lead-grid { display: grid; gap: 22px; }
-      .overview-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .portfolio-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .stack-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-      .lead-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .slide.active { display: block; }
+
+      .slide-tag {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .slide h3 {
+        font-size: 28px;
+        letter-spacing: -0.02em;
+        margin: 16px 0 20px;
+      }
+
+      .slide ul { list-style: none; margin: 0; padding: 0; }
+
+      .slide li {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--fg);
+        font-size: 15px;
+      }
+
+      .slide li:last-child { border-bottom: 0; }
+
+      .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .slider-dots button {
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border-radius: 50%;
+        border: 1px solid var(--fg);
+        background: var(--bg);
+        cursor: pointer;
+      }
+
+      .slider-dots button.active { background: var(--fg); }
+
+      /* Section head */
+      .section-head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+        gap: 64px;
+        margin-bottom: 96px;
+      }
+
+      .section-head p { font-size: 19px; max-width: 520px; }
+
+      /* Grids & cards */
+      .overview-grid,
+      .portfolio-grid,
+      .stack-grid,
+      .lead-grid {
+        display: grid;
+        gap: 64px;
+      }
+
+      .overview-grid,
+      .stack-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+      .portfolio-grid,
+      .lead-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
       .card {
-        background: rgba(15, 23, 42, 0.72); border: 1px solid var(--line); border-radius: 22px; padding: 22px 20px; box-shadow: 0 18px 36px rgba(2, 6, 23, 0.18);
+        border-top: 1px solid var(--fg);
+        padding-top: 32px;
       }
+
       .card-icon {
-        width: 46px; height: 46px; display: inline-flex; align-items: center; justify-content: center; border-radius: 14px;
-        background: linear-gradient(135deg, rgba(125, 211, 252, 0.12), rgba(167, 139, 250, 0.12)); border: 1px solid rgba(125, 211, 252, 0.2); font-size: 1.2rem; margin-bottom: 14px;
+        display: block;
+        font-size: 28px;
+        line-height: 1;
+        margin-bottom: 24px;
       }
-      .card h3 { font-size: 1.3rem; margin-bottom: 8px; }
-      .card p { font-size: 0.97rem; }
-      .chip-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
+
+      .card h3 { margin-bottom: 12px; }
+      .card p { font-size: 16px; }
+
+      .stack-grid .card h3 { margin-bottom: 24px; }
+
+      .chip-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+
       .chip {
-        display: inline-flex; align-items: center; border-radius: 999px; padding: 10px 12px; font-size: 0.8rem; font-weight: 600; color: var(--text);
-        background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(148, 163, 184, 0.15);
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border: 1px solid var(--fg);
+        font-size: 13px;
+        font-weight: 500;
       }
+
       .quote {
-        border: 1px solid rgba(125, 211, 252, 0.18); background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(167, 139, 250, 0.08));
-        border-radius: 20px; padding: 24px; margin-top: 30px;
+        margin-top: 120px;
+        max-width: 860px;
       }
-      .quote p { color: var(--text); font-size: 1.05rem; }
+
+      .quote p {
+        font-size: clamp(24px, 2.6vw, 32px);
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: -0.015em;
+      }
+
+      /* Contact */
       .contact-box {
-        display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 20px; align-items: center; padding: 28px; border-radius: 28px; background: linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(11, 18, 28, 0.94)); border: 1px solid var(--line); margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 80px;
+        align-items: end;
       }
-      .contact-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 16px; }
-      footer { padding: 24px 0 48px; color: var(--muted); }
+
+      .contact-box h2 { margin-bottom: 32px; }
+      .contact-box p { font-size: 17px; max-width: 560px; }
+
+      .contact-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--fg);
+        color: var(--bg);
+        padding: 48px 0;
+        font-size: 13px;
+      }
+
       @media (max-width: 900px) {
-        .hero, .contact-box, .overview-grid, .portfolio-grid, .stack-grid, .lead-grid { grid-template-columns: 1fr; }
+        :root { --gap: 96px; }
+
+        .hero,
+        .section-head,
+        .contact-box,
+        .overview-grid,
+        .portfolio-grid,
+        .stack-grid,
+        .lead-grid { grid-template-columns: 1fr; }
+
+        .hero, .contact-box { gap: 56px; }
+        .overview-grid, .portfolio-grid, .stack-grid, .lead-grid { gap: 48px; }
+        .section-head { gap: 24px; margin-bottom: 56px; }
+        .quote { margin-top: 72px; }
+        .metrics { grid-template-columns: 1fr; gap: 16px; }
+
         .nav-links { display: none; }
-        .section-head { display: block; }
-        .metrics { grid-template-columns: 1fr; }
+        .hero p { font-size: 18px; }
+        .hero-panel { padding: 24px; }
+        .pill { padding: 8px 12px; font-size: 11px; }
       }
     </style>
   </head>
@@ -185,10 +406,10 @@
     <header>
       <div class="container nav">
         <a href="index.html" class="brand" aria-label="QuantaPrism Network home">
-          <img class="brand-mark" src="assets/quantprism.png" alt="QuantaPrism Network logo" />
+          <img class="brand-mark" src="assets/quantaprism.png" alt="QuantaPrism Network logo" />
           <span class="brand-text">
             <strong>QuantaPrism</strong>
-            <span>Network</span>
+            <span>Software Portfolio</span>
           </span>
         </a>
 
@@ -200,25 +421,20 @@
           <a href="#contact">Contact</a>
         </nav>
 
-        <a class="pill" href="index.html">Company Profile</a>
+        <a class="pill" href="hardware-portfolio.html">Hardware Portfolio</a>
       </div>
     </header>
 
     <main class="container">
       <section class="hero">
         <div>
-          <div class="eyebrow">Company portfolio</div>
+          <div class="eyebrow">Software portfolio</div>
           <h1>Full-stack networking, embedded Linux, and platform software for modern infrastructure.</h1>
           <p>
             QuantaPrism Network is a software engineering company focused on intelligent networking, Linux-based system development,
             datacenter switching, edge platform enablement, automation, and AI-assisted operations. We help customers build reliable,
             scalable, production-ready systems with low operational risk and faster commercialization.
           </p>
-
-          <div class="cta-row">
-            <a class="button primary" href="#pitch">View investor pitch</a>
-            <a class="button secondary" href="#stack">Explore capabilities</a>
-          </div>
 
           <div class="metrics">
             <div class="metric">
@@ -480,7 +696,6 @@
 
           <div class="contact-actions">
             <a class="button primary" href="mailto:kavirhene@quantaprism.com">kavirhene@quantaprism.com</a>
-            <a class="button secondary" href="index.html">Back to profile</a>
           </div>
         </div>
       </section>

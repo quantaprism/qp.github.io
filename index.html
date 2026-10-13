@@ -5,60 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="QuantaPrism delivers software networking expertise across Layer 1 to Layer 4, customer operating systems, network OS, routing stack, SONiC, FRR, Linux Kernel, and OpenConfig-driven telemetry and configuration."
+      content="QuantaPrism delivers software networking expertise across Layer 1 to Layer 4, customer operating systems, network OS, routing stack, SONiC, FRR, Linux Kernel, and OpenConfig-driven telemetry and configuration, plus hardware design: board design, IoT devices, SoC platforms, and AI-assisted PCB design."
     />
     <title>QuantaPrism | Software Networking Expertise</title>
     <style>
       :root {
-        --bg: #07111f;
-        --bg-alt: #0d1b2a;
-        --panel: rgba(14, 27, 42, 0.8);
-        --panel-strong: rgba(20, 38, 58, 0.95);
-        --line: rgba(148, 163, 184, 0.18);
-        --text: #e6eef9;
-        --muted: #a8bdd7;
-        --primary: #7dd3fc;
-        --primary-strong: #38bdf8;
-        --secondary: #a78bfa;
-        --success: #34d399;
-        --warning: #fbbf24;
-        --shadow: 0 30px 80px rgba(2, 6, 23, 0.6);
+        --black: #000;
+        --white: #fff;
+        --font: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        --gap: 160px;
       }
 
       * { box-sizing: border-box; }
 
-      html {
-        scroll-behavior: smooth;
-      }
+      html { scroll-behavior: smooth; }
 
       body {
         margin: 0;
-        color: var(--text);
-        background:
-          radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 25%),
-          radial-gradient(circle at bottom right, rgba(167, 139, 250, 0.18), transparent 28%),
-          linear-gradient(180deg, var(--bg) 0%, #0b1420 100%);
-        font-family: Inter, "Segoe UI", Roboto, sans-serif;
+        background: var(--white);
+        color: var(--black);
+        font-family: var(--font);
+        font-size: 17px;
         line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
       }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+      a { color: inherit; text-decoration: none; }
 
       .container {
-        width: min(1180px, calc(100% - 32px));
+        width: min(1120px, calc(100% - 48px));
         margin: 0 auto;
       }
 
+      /* Header */
       header {
         position: sticky;
         top: 0;
         z-index: 20;
-        backdrop-filter: blur(20px);
-        background: rgba(7, 17, 31, 0.7);
-        border-bottom: 1px solid var(--line);
+        background: var(--white);
+        border-bottom: 1px solid var(--black);
       }
 
       .nav {
@@ -69,451 +54,382 @@
         gap: 24px;
       }
 
-      .brand {JPG
+      .brand {
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
       }
 
       .brand-mark {
-        width: 42px;
-        height: 42px;
-        border-radius: 12px;
+        width: 36px;
+        height: 36px;
         object-fit: cover;
-        box-shadow: 0 10px 24px rgba(125, 211, 252, 0.2);
+        filter: grayscale(1) contrast(1.2);
       }
 
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 24px;
-        color: var(--muted);
-        font-size: 0.95rem;
+        gap: 28px;
+        font-size: 14px;
       }
 
-      .nav-links a:hover {
-        color: var(--text);
-      }
+      .nav-links a:hover { text-decoration: underline; }
 
       .pill {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border: 1px solid rgba(125, 211, 252, 0.35);
-        background: rgba(56, 189, 248, 0.08);
-        border-radius: 999px;
-        color: var(--primary);
-        padding: 10px 18px;
-        font-size: 0.8rem;
-        font-weight: 700;
+        border: 1px solid var(--black);
+        padding: 8px 16px;
+        font-size: 12px;
+        font-weight: 600;
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
-      main {
-        padding-bottom: 80px;
+      .pill,
+      .stat strong { white-space: nowrap; }
+
+      .pill:hover { background: var(--black); color: var(--white); }
+
+      /* Type */
+      .eyebrow {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+
+      h1 {
+        font-size: clamp(44px, 6vw, 80px);
+        font-weight: 700;
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+        margin: 0 0 32px;
+      }
+
+      h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+        margin: 0 0 12px;
+      }
+
+      p { margin: 0; }
+
+      /* Layout */
+      section {
+        padding: var(--gap) 0;
+        border-top: 1px solid var(--black);
       }
 
       .hero {
         display: grid;
-        grid-template-columns: 1.35fr 0.95fr;
+        grid-template-columns: 1.3fr 1fr;
         align-items: center;
-        gap: 48px;
-        padding: 92px 0 44px;
-      }
-
-      .eyebrow {
-        color: var(--primary);
-        font-weight: 700;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        font-size: 0.75rem;
-        margin-bottom: 18px;
-      }
-
-      h1 {
-        font-size: clamp(2.6rem, 5vw, 5rem);
-        line-height: 1.05;
-        margin: 0 0 20px;
-        letter-spacing: -0.06em;
-      }
-
-      h2 {
-        font-size: clamp(2rem, 3vw, 3rem);
-        line-height: 1.15;
-        letter-spacing: -0.04em;
-        margin: 0 0 18px;
+        gap: 80px;
+        border-top: 0;
       }
 
       .hero p {
-        color: var(--muted);
-        font-size: 1.08rem;
-        max-width: 620px;
+        font-size: 21px;
+        max-width: 600px;
       }
 
       .cta-row {
         display: flex;
         flex-wrap: wrap;
         gap: 16px;
-        margin-top: 30px;
+        margin-top: 48px;
       }
 
       .button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 14px 22px;
-        border-radius: 12px;
-        border: 1px solid rgba(148, 163, 184, 0.22);
-        font-weight: 700;
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        padding: 14px 24px;
+        border: 1px solid var(--black);
+        font-size: 15px;
+        font-weight: 500;
+        transition: background 0.2s ease, color 0.2s ease;
       }
 
-      .button:hover {
-        transform: translateY(-1px);
-      }
+      .button.primary { background: var(--black); color: var(--white); }
+      .button.primary:hover { background: var(--white); color: var(--black); }
+      .button.secondary:hover { background: var(--black); color: var(--white); }
 
-      .button.primary {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        color: #02101a;
-        border-color: transparent;
-      }
-
-      .button.secondary {
-        color: var(--text);
-        background: rgba(15, 23, 42, 0.7);
-      }
-
+      /* Hero card */
       .hero-card {
-        position: relative;
-        background: linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(9, 18, 31, 0.95));
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        padding: 22px;
-        box-shadow: var(--shadow);
-      }
-
-      .graph {
-        border-radius: 20px;
-        background:
-          linear-gradient(180deg, rgba(56, 189, 248, 0.12), rgba(31, 41, 55, 0.02)),
-          rgba(15, 23, 42, 0.9);
-        border: 1px solid rgba(125, 211, 252, 0.2);
-        padding: 18px;
+        border: 1px solid var(--black);
+        padding: 32px;
       }
 
       .graph-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 18px;
-        color: var(--muted);
-        font-size: 0.76rem;
+        margin-bottom: 24px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        letter-spacing: 0.12em;
       }
 
-      .dots {
-        display: flex;
-        gap: 6px;
-      }
+      .dots { display: flex; gap: 6px; }
 
       .dot {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
+        border: 1px solid var(--black);
       }
 
-      .dot:nth-child(1) { background: #f87171; }
-      .dot:nth-child(2) { background: #fbbf24; }
-      .dot:nth-child(3) { background: #34d399; }
+      .dot:first-child { background: var(--black); }
 
       .stack-bars {
         display: grid;
         grid-template-columns: repeat(5, minmax(0, 1fr));
         align-items: end;
-        gap: 12px;
-        height: 190px;
-        padding-top: 10px;
+        gap: 16px;
+        height: 200px;
       }
 
       .bar-wrap {
         display: flex;
         flex-direction: column;
+        justify-content: flex-end;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
         height: 100%;
       }
 
-      .bar {
-        width: 100%;
-        border-radius: 12px 12px 6px 6px;
-        background: linear-gradient(180deg, var(--primary), rgba(56, 189, 248, 0.35));
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      }
+      .bar { width: 100%; background: var(--black); }
 
-      .bar:nth-child(1) { height: 28%; }
-      .bar:nth-child(2) { height: 42%; }
-      .bar:nth-child(3) { height: 64%; }
-      .bar:nth-child(4) { height: 85%; }
-      .bar:nth-child(5) { height: 100%; }
-
-      .bar-wrap span {
-        color: var(--muted);
-        font-size: 0.8rem;
-      }
+      .bar-wrap span { font-size: 13px; font-weight: 500; }
 
       .stats-row {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 16px;
-        margin-top: 18px;
-      }
-
-      .stat {
-        background: rgba(15, 23, 42, 0.7);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 16px 14px;
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid var(--black);
       }
 
       .stat strong {
         display: block;
-        font-size: 1.4rem;
+        font-size: 20px;
+        font-weight: 700;
         margin-bottom: 4px;
       }
 
-      .stat span {
-        color: var(--muted);
-        font-size: 0.8rem;
-      }
+      .stat span { font-size: 13px; }
 
-      section {
-        padding-top: 56px;
-      }
-
+      /* Section intro */
       .section-intro {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         align-items: end;
-        justify-content: space-between;
-        gap: 18px;
-        margin-bottom: 28px;
+        gap: 64px;
+        margin-bottom: 96px;
       }
 
-      .section-intro p {
-        max-width: 560px;
-        color: var(--muted);
-      }
+      .section-intro p { font-size: 19px; max-width: 520px; }
 
-      .grid-3 {
+      /* Cards */
+      .grid-3,
+      .portfolio-spotlight {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
+        gap: 64px;
       }
 
       .feature-card,
-      .solution-card {
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-radius: 22px;
-        padding: 24px;
-        box-shadow: 0 18px 32px rgba(2, 6, 23, 0.2);
+      .solution-card,
+      .portfolio-item {
+        border-top: 1px solid var(--black);
+        padding-top: 32px;
       }
 
       .icon {
-        width: 46px;
-        height: 46px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 14px;
-        background: linear-gradient(135deg, rgba(125, 211, 252, 0.12), rgba(167, 139, 250, 0.12));
-        border: 1px solid rgba(125, 211, 252, 0.15);
-        margin-bottom: 16px;
-        font-size: 1.25rem;
-      }
-
-      .feature-card h3,
-      .solution-card h3 {
-        margin: 0 0 10px;
-        font-size: 1.25rem;
-      }
-
-      .feature-card p,
-      .solution-card p,
-      .layer-list li,
-      .contact-card p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .layer-matrix {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
-      }
-
-      .layer-panel {
-        background: var(--panel-strong);
-        border: 1px solid var(--line);
-        border-radius: 22px;
-        overflow: hidden;
-      }
-
-      .layer-panel .header {
-        padding: 18px 20px;
-        border-bottom: 1px solid var(--line);
-        background: rgba(8, 16, 27, 0.8);
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--primary);
-      }
-
-      .layer-list {
-        list-style: none;
-        margin: 0;
-        padding: 20px;
-      }
-
-      .layer-list li {
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-      }
-
-      .layer-list li:last-child {
-        border-bottom: 0;
-      }
-
-      .highlight-row {
-        display: grid;
-        grid-template-columns: 1.3fr 0.7fr;
-        gap: 24px;
-        margin-top: 32px;
-      }
-
-      .quote-box {
-        background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(167, 139, 250, 0.08));
-        border: 1px solid rgba(125, 211, 252, 0.15);
-        border-radius: 24px;
-        padding: 26px;
-      }
-
-      .quote-box p {
-        margin: 0;
-        font-size: 1.1rem;
-        color: var(--text);
-      }
-
-      .mini-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 10px;
-      }
-
-      .mini-list li {
-        padding: 12px 14px;
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        color: var(--muted);
-        background: rgba(15, 23, 42, 0.5);
-      }
-
-      .contact {
-        padding-top: 64px;
-      }
-
-      .contact-card {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 24px;
-        align-items: center;
-        background: linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(11, 18, 29, 0.95));
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        padding: 30px 28px;
-      }
-
-      .contact-card h3 {
-        margin: 0 0 12px;
-        font-size: clamp(1.8rem, 2vw, 2.6rem);
-      }
-
-      .portfolio-spotlight {
-        margin-top: 18px;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
-      }
-
-      .portfolio-item {
-        background: rgba(15, 23, 42, 0.72);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 22px 18px;
-        box-shadow: 0 16px 28px rgba(2, 6, 23, 0.18);
+        display: block;
+        font-size: 28px;
+        line-height: 1;
+        margin-bottom: 24px;
       }
 
       .portfolio-item .tag {
         display: inline-block;
-        color: var(--primary);
-        font-size: 0.72rem;
-        letter-spacing: 0.12em;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        font-weight: 700;
-        margin-bottom: 8px;
+        margin-bottom: 16px;
       }
 
-      .portfolio-item h3 {
-        margin: 0 0 10px;
-        font-size: 1.2rem;
+      .feature-card p,
+      .solution-card p,
+      .portfolio-item p { font-size: 16px; }
+
+      /* Portfolio choice */
+      .portfolio-choice {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border: 2px solid var(--black);
       }
 
-      .portfolio-item p {
-        margin: 0;
-        color: var(--muted);
+      .choice {
+        display: flex;
+        flex-direction: column;
+        padding: 48px 40px;
+        min-height: 320px;
+        transition: background 0.2s ease, color 0.2s ease;
       }
+
+      .choice.software { background: var(--black); color: var(--white); }
+      .choice.hardware { background: var(--white); color: var(--black); }
+      .choice.software:hover { background: var(--white); color: var(--black); }
+      .choice.hardware:hover { background: var(--black); color: var(--white); }
+
+      .choice .tag {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+
+      .choice h3 { font-size: 32px; letter-spacing: -0.02em; margin-bottom: 16px; }
+      .choice p { font-size: 16px; max-width: 420px; }
+
+      .choice-link {
+        margin-top: auto;
+        padding-top: 40px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      /* Stack */
+      .layer-matrix {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 64px;
+      }
+
+      .layer-panel .header {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--black);
+      }
+
+      .layer-list { list-style: none; margin: 0; padding: 0; }
+
+      .layer-list li {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--black);
+        font-size: 16px;
+      }
+
+      .highlight-row {
+        display: grid;
+        grid-template-columns: 1.4fr 0.6fr;
+        gap: 80px;
+        margin-top: 120px;
+        align-items: start;
+      }
+
+      .quote-box p {
+        font-size: clamp(24px, 2.6vw, 32px);
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: -0.015em;
+      }
+
+      .mini-list { list-style: none; margin: 0; padding: 0; }
+
+      .mini-list li {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--black);
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .mini-list li:first-child { border-top: 1px solid var(--black); }
+
+      /* Contact */
+      .contact-card {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 80px;
+        align-items: end;
+      }
+
+      .contact-card h3 {
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+        margin-bottom: 32px;
+      }
+
+      .contact-card p { font-size: 17px; max-width: 560px; }
 
       .contact-actions {
         display: flex;
-        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-start;
         gap: 16px;
-        flex-wrap: wrap;
       }
 
+      /* Footer */
       footer {
-        border-top: 1px solid var(--line);
-        padding: 26px 0 42px;
-        color: var(--muted);
+        background: var(--black);
+        color: var(--white);
+        padding: 48px 0;
+        font-size: 13px;
       }
 
       @media (max-width: 900px) {
+        :root { --gap: 96px; }
+
         .hero,
+        .section-intro,
         .highlight-row,
         .contact-card,
         .grid-3,
         .layer-matrix,
-        .portfolio-spotlight {
-          grid-template-columns: 1fr;
-        }
+        .portfolio-spotlight,
+        .portfolio-choice { grid-template-columns: 1fr; }
 
-        .nav-links {
-          display: none;
-        }
+        .choice { padding: 32px 24px; min-height: 0; }
+        .choice h3 { font-size: 26px; }
 
-        .hero {
-          padding-top: 60px;
-        }
+        .hero, .highlight-row, .contact-card { gap: 56px; }
+        .grid-3, .portfolio-spotlight, .layer-matrix { gap: 48px; }
+        .section-intro { gap: 24px; margin-bottom: 56px; }
+        .highlight-row { margin-top: 72px; }
 
-        .stats-row {
-          grid-template-columns: 1fr;
-        }
+        .nav-links { display: none; }
+        .hero p { font-size: 18px; }
+        .hero-card { padding: 24px; }
+        .stat strong { font-size: 17px; }
+        .pill { padding: 8px 12px; font-size: 11px; }
       }
     </style>
   </head>
@@ -530,30 +446,25 @@
           <a href="#stack">Stack</a>
           <a href="#solutions">Solutions</a>
           <a href="#telemetry">Telemetry</a>
-          <a href="company-portfolio.html">Company Portfolio</a>
           <a href="#contact">Contact</a>
         </nav>
 
-        <a href="company-portfolio.html" class="pill" aria-label="View company portfolio">Company Portfolio</a>
+        <a href="#portfolio" class="pill" aria-label="View software and hardware portfolios">Portfolios</a>
       </div>
     </header>
 
     <main id="top" class="container">
       <section class="hero">
         <div>
-          <div class="eyebrow">Software networking company</div>
-          <h1>Building resilient networking from Layer 1 to Layer 3 and software solutions</h1>
+          <div class="eyebrow">Software &amp; hardware engineering company</div>
+          <h1>Resilient networking software and hardware design, from Layer 1 to Layer 3.</h1>
           <p>
             QuantaPrism helps enterprises, cloud operators, and networking teams design,
             validate, and optimize the software stack behind modern networks — from silicon-facing
             physical interfaces to application-aware routing and policy enforcement.
+            On the hardware side, we design the boards behind connected products — board design,
+            IoT devices, System on Chip (SoC) platforms, and PCB design, including AI-assisted PCB design.
           </p>
-
-          <div class="cta-row">
-            <a class="button primary" href="company-portfolio.html">View company portfolio</a>
-            <a class="button secondary" href="#solutions">Explore capabilities</a>
-            <a class="button secondary" href="#contact">Contact us</a>
-          </div>
         </div>
 
         <div class="hero-card" aria-label="Networking stack overview">
@@ -602,6 +513,24 @@
             QuantaPrism helps customers scale modern networking platforms with reliable Linux integration, routing and switching innovation, automation, and telemetry-driven operations.
           </p>
         </div>
+
+        <div class="portfolio-choice">
+          <a class="choice software" href="software-portfolio.html">
+            <span class="tag">Software</span>
+            <h3>Software portfolio</h3>
+            <p>Networking software, Linux and kernel engineering, NOS platforms, automation, telemetry, and AI operations.</p>
+            <span class="choice-link">View software portfolio →</span>
+          </a>
+
+          <a class="choice hardware" href="hardware-portfolio.html">
+            <span class="tag">Hardware</span>
+            <h3>Hardware portfolio</h3>
+            <p>Board design, IoT devices, System on Chip (SoC) platforms, PCB design, and PCB design using AI. Design only — not manufacturing.</p>
+            <span class="choice-link">View hardware portfolio →</span>
+          </a>
+        </div>
+
+        <div class="eyebrow" style="margin-top: 120px">Software highlights</div>
 
         <div class="portfolio-spotlight">
           <article class="portfolio-item">

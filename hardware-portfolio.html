@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="QuantaPrism hardware portfolio: board design, IoT devices, System on Chip (SoC) platforms, PCB design, and AI-assisted PCB design. Design only — production-ready files handed off to your manufacturer."
+    />
+    <title>QuantaPrism | Hardware Portfolio</title>
+    <style>
+      :root {
+        --black: #000;
+        --white: #fff;
+        --font: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        --gap: 160px;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        background: var(--white);
+        color: var(--black);
+        font-family: var(--font);
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .container {
+        width: min(1120px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      /* Header: inverted bar marks the hardware page */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--black);
+        color: var(--white);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+        gap: 24px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+        object-fit: cover;
+        filter: grayscale(1) contrast(1.2) invert(1);
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
+
+      .brand-text strong {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .brand-text span {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        font-size: 14px;
+      }
+
+      .nav-links a:hover { text-decoration: underline; }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid var(--white);
+        padding: 8px 16px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .pill:hover { background: var(--white); color: var(--black); }
+
+      /* Type */
+      .eyebrow {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+
+      h1 {
+        font-size: clamp(44px, 5.6vw, 76px);
+        font-weight: 700;
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+        margin: 0 0 32px;
+      }
+
+      h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+        margin: 0 0 12px;
+      }
+
+      p { margin: 0; }
+
+      /* Layout */
+      section {
+        padding: var(--gap) 0;
+        border-top: 2px solid var(--black);
+      }
+
+      .hero { border-top: 0; }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+
+      .hero p {
+        font-size: 19px;
+        max-width: 600px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 48px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 24px;
+        border: 1px solid var(--black);
+        font-size: 15px;
+        font-weight: 500;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .button.primary { background: var(--black); color: var(--white); }
+      .button.primary:hover { background: var(--white); color: var(--black); }
+      .button.secondary:hover { background: var(--black); color: var(--white); }
+
+      /* Scope box: what we do / what we don't */
+      .scope {
+        border: 2px solid var(--black);
+      }
+
+      .scope-row {
+        padding: 28px 32px;
+      }
+
+      .scope-row + .scope-row { border-top: 2px solid var(--black); }
+
+      .scope-row.inverse { background: var(--black); color: var(--white); }
+
+      .scope-row ul { list-style: none; margin: 0; padding: 0; }
+
+      .scope-row li {
+        padding: 8px 0;
+        font-size: 16px;
+      }
+
+      .scope-row li::before { content: "— "; }
+
+      /* Section head with number */
+      .section-head {
+        display: grid;
+        grid-template-columns: 120px 1fr 1fr;
+        align-items: end;
+        gap: 48px;
+        margin-bottom: 96px;
+      }
+
+      .section-num {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .section-head p { font-size: 19px; max-width: 480px; }
+
+      /* Spec grid: boxed cells sharing borders */
+      .spec-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-top: 2px solid var(--black);
+        border-left: 2px solid var(--black);
+      }
+
+      .spec-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .cell {
+        padding: 40px 32px;
+        border-right: 2px solid var(--black);
+        border-bottom: 2px solid var(--black);
+      }
+
+      .cell.inverse { background: var(--black); color: var(--white); }
+
+      .cell-tag {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+
+      .cell p { font-size: 16px; }
+
+      .cell ul { list-style: none; margin: 20px 0 0; padding: 0; }
+
+      .cell li {
+        padding: 10px 0;
+        border-top: 1px solid currentColor;
+        font-size: 15px;
+      }
+
+      /* Process steps */
+      .steps {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-top: 2px solid var(--black);
+      }
+
+      .steps li {
+        display: grid;
+        grid-template-columns: 120px 1fr 1.4fr;
+        gap: 48px;
+        padding: 32px 0;
+        border-bottom: 1px solid var(--black);
+        align-items: baseline;
+      }
+
+      .steps .num {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .steps h3 { margin: 0; }
+      .steps p { font-size: 16px; }
+
+      .chip-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border: 1px solid var(--black);
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .note {
+        margin-top: 64px;
+        max-width: 860px;
+        font-size: clamp(22px, 2.4vw, 28px);
+        font-weight: 500;
+        line-height: 1.35;
+        letter-spacing: -0.015em;
+      }
+
+      /* Contact */
+      .contact-box {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 80px;
+        align-items: end;
+      }
+
+      .contact-box h2 { margin-bottom: 32px; }
+      .contact-box p { font-size: 17px; max-width: 560px; }
+
+      .contact-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--black);
+        color: var(--white);
+        padding: 48px 0;
+        font-size: 13px;
+      }
+
+      @media (max-width: 900px) {
+        :root { --gap: 96px; }
+
+        .hero-grid,
+        .contact-box,
+        .spec-grid,
+        .spec-grid.two { grid-template-columns: 1fr; }
+
+        .hero-grid, .contact-box { gap: 56px; }
+
+        .section-head {
+          grid-template-columns: 1fr;
+          gap: 24px;
+          margin-bottom: 56px;
+        }
+
+        .section-num { font-size: 44px; }
+
+        .steps li {
+          grid-template-columns: 56px 1fr;
+          gap: 8px 16px;
+        }
+
+        .steps li p { grid-column: 2; }
+
+        .cell { padding: 32px 24px; }
+        .scope-row { padding: 24px; }
+
+        .nav-links { display: none; }
+        .hero p { font-size: 18px; }
+        .pill { padding: 8px 12px; font-size: 11px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a href="index.html" class="brand" aria-label="QuantaPrism home">
+          <img class="brand-mark" src="assets/quantaprism.png" alt="QuantaPrism logo" />
+          <span class="brand-text">
+            <strong>QuantaPrism</strong>
+            <span>Hardware Portfolio</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#capabilities">Capabilities</a>
+          <a href="#ai-pcb">AI PCB Design</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="pill" href="software-portfolio.html">Software Portfolio</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Hardware portfolio</div>
+            <h1>Board design, IoT devices, and SoC platforms — engineered from schematic to layout.</h1>
+            <p>
+              QuantaPrism designs the electronics behind connected products: custom boards, IoT devices, and System on Chip
+              based platforms. We take a product from requirements to a production-ready PCB design, using AI-assisted
+              tools to move faster and catch issues earlier.
+            </p>
+          </div>
+
+          <div class="scope" aria-label="Scope of hardware services">
+            <div class="scope-row">
+              <div class="eyebrow">What we do</div>
+              <ul>
+                <li>Board design and system architecture</li>
+                <li>IoT device hardware design</li>
+                <li>System on Chip (SoC) platform design</li>
+                <li>PCB schematic and layout design</li>
+                <li>AI-assisted PCB design</li>
+              </ul>
+            </div>
+            <div class="scope-row inverse">
+              <div class="eyebrow">What we don't do</div>
+              <ul>
+                <li>PCB fabrication or manufacturing — we hand off production-ready design files to your manufacturer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="capabilities">
+        <div class="section-head">
+          <div class="section-num">01</div>
+          <div>
+            <div class="eyebrow">Capabilities</div>
+            <h2>Five hardware design disciplines.</h2>
+          </div>
+          <p>
+            Each engagement can cover a single discipline or the full path from concept to a manufacturable design.
+          </p>
+        </div>
+
+        <div class="spec-grid">
+          <article class="cell">
+            <span class="cell-tag">Board</span>
+            <h3>Board design</h3>
+            <p>Custom board architecture, component selection, power design, and interface planning for embedded and networking products.</p>
+          </article>
+
+          <article class="cell">
+            <span class="cell-tag">IoT</span>
+            <h3>IoT devices</h3>
+            <p>Hardware for connected devices — sensors, wireless connectivity, low-power design, and compact form factors.</p>
+          </article>
+
+          <article class="cell">
+            <span class="cell-tag">SoC</span>
+            <h3>System on Chip (SoC)</h3>
+            <p>SoC-based platform design, including processor selection, memory, peripherals, and the supporting board around the chip.</p>
+          </article>
+
+          <article class="cell">
+            <span class="cell-tag">PCB</span>
+            <h3>PCB design</h3>
+            <p>Schematic capture, multi-layer layout, routing, and design-rule checks — delivered as production-ready files. Design only, not manufacturing.</p>
+          </article>
+
+          <article class="cell inverse">
+            <span class="cell-tag">AI</span>
+            <h3>PCB design using AI</h3>
+            <p>AI-assisted placement, routing, and design review to shorten design cycles and reduce errors before handoff.</p>
+          </article>
+
+          <article class="cell">
+            <span class="cell-tag">Software</span>
+            <h3>Paired with our software team</h3>
+            <p>Boards designed alongside the firmware, drivers, and Linux bring-up covered in our software portfolio.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ai-pcb">
+        <div class="section-head">
+          <div class="section-num">02</div>
+          <div>
+            <div class="eyebrow">AI PCB design</div>
+            <h2>PCB design, accelerated with AI.</h2>
+          </div>
+          <p>
+            AI tools support our engineers at every stage of the layout — the engineer stays in control, AI speeds up the repetitive work.
+          </p>
+        </div>
+
+        <div class="spec-grid two">
+          <article class="cell">
+            <span class="cell-tag">Layout</span>
+            <h3>Placement and routing</h3>
+            <ul>
+              <li>AI-suggested component placement</li>
+              <li>Assisted routing for dense, multi-layer boards</li>
+              <li>Faster iteration between layout options</li>
+            </ul>
+          </article>
+
+          <article class="cell">
+            <span class="cell-tag">Review</span>
+            <h3>Checks and optimization</h3>
+            <ul>
+              <li>Automated design-rule and error checks</li>
+              <li>Early detection of layout issues</li>
+              <li>Component and BOM review</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="section-head">
+          <div class="section-num">03</div>
+          <div>
+            <div class="eyebrow">Process</div>
+            <h2>From requirements to manufacturing handoff.</h2>
+          </div>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <span class="num">01</span>
+            <h3>Requirements</h3>
+            <p>Define the product, interfaces, power budget, size, and target cost.</p>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <h3>Architecture</h3>
+            <p>Select the SoC or processor, key components, and overall board architecture.</p>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <h3>Schematic</h3>
+            <p>Capture the full circuit design and review it against requirements.</p>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <h3>PCB layout</h3>
+            <p>Place and route the board, using AI-assisted tools where they help.</p>
+          </li>
+          <li>
+            <span class="num">05</span>
+            <h3>Review</h3>
+            <p>Design-rule checks, design review, and fixes before release.</p>
+          </li>
+          <li>
+            <span class="num">06</span>
+            <h3>Handoff</h3>
+            <p>Deliver production-ready files to your chosen manufacturer.</p>
+          </li>
+        </ol>
+
+        <div style="margin-top: 96px">
+          <div class="eyebrow">Deliverables</div>
+          <div class="chip-wrap">
+            <span class="chip">Schematics</span>
+            <span class="chip">PCB layout files</span>
+            <span class="chip">Gerber files</span>
+            <span class="chip">Bill of materials (BOM)</span>
+            <span class="chip">Pick-and-place files</span>
+            <span class="chip">Design review notes</span>
+          </div>
+        </div>
+
+        <p class="note">
+          “We design the board. Your manufacturer builds it. QuantaPrism stops at a clean, production-ready design.”
+        </p>
+      </section>
+
+      <section id="contact">
+        <div class="contact-box">
+          <div>
+            <div class="eyebrow">QuantaPrism Hardware</div>
+            <h2>Have a board, device, or SoC platform to design?</h2>
+            <p>
+              Tell us about your product. We'll help you get from idea to a production-ready PCB design.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="button primary" href="mailto:kavirhene@quantaprism.com">kavirhene@quantaprism.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© 2026 QuantaPrism. Board design, IoT devices, SoC platforms, and AI-assisted PCB design.</div>
+    </footer>
+  </body>
+</html>
