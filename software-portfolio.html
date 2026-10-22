@@ -327,6 +327,15 @@
       .card h3 { margin-bottom: 12px; }
       .card p { font-size: 16px; }
 
+      .product-link {
+        display: inline-block;
+        margin-top: 20px;
+        font-weight: 600;
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
       .stack-grid .card h3 { margin-bottom: 24px; }
 
       .chip-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -414,6 +423,7 @@
         </a>
 
         <nav class="nav-links" aria-label="Main navigation">
+          <a href="#products">Products</a>
           <a href="#overview">Overview</a>
           <a href="#portfolio">Portfolio</a>
           <a href="#stack">Technology</a>
@@ -497,6 +507,40 @@
             <button data-index="1" aria-label="Show slide 2"></button>
             <button data-index="2" aria-label="Show slide 3"></button>
           </div>
+        </div>
+      </section>
+
+      <section id="products">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Software products</div>
+            <h2>Try our products online.</h2>
+          </div>
+          <p>
+            Sign in to each product with your own account, right here on quantaprism.com.
+            <a class="product-link" href="products.html">All products →</a>
+          </p>
+        </div>
+
+        <div class="overview-grid">
+          <article class="card">
+            <div class="card-icon">▶</div>
+            <h3>GenAI Video Studio</h3>
+            <p>AI media suite: text to video, speech and voices, translation across Indian languages, transcription, and talking AI avatars.</p>
+            <a class="product-link" href="product.html?id=genai-video-studio">Open GenAI Video Studio →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon">▣</div>
+            <h3>AIBuildOS</h3>
+            <p>Build network operating system images as ONIE installers from the web, a REST API or a CLI, then boot-test them in a QEMU virtual switch.</p>
+            <a class="product-link" href="product.html?id=aibuildos">Open AIBuildOS →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon">◈</div>
+            <h3>iXFlexTopology</h3>
+            <p>Design network topologies, deploy them as FRR / VPP sandboxes, and test them against RFC sections with generated configuration and reports.</p>
+            <a class="product-link" href="product.html?id=ixflextopology">Open iXFlexTopology →</a>
+          </article>
         </div>
       </section>
 

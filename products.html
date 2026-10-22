@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="QuantaPrism products: software you can run in your browser, with hardware and other products to follow."
+    />
+    <title>QuantaPrism | Products</title>
+    <style>
+      :root {
+        --bg: #000;
+        --fg: #fff;
+        --font: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        --gap: 120px;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: var(--font);
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+
+      .container {
+        width: min(1120px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      /* Header */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--bg);
+        border-bottom: 1px solid var(--fg);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+        gap: 24px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+        object-fit: cover;
+        filter: grayscale(1) contrast(1.2) invert(1);
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
+
+      .brand-text strong {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .brand-text span {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        font-size: 14px;
+      }
+
+      .nav-links a:hover { text-decoration: underline; }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid var(--fg);
+        padding: 8px 16px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .pill:hover { background: var(--fg); color: var(--bg); }
+
+      /* Type */
+      .eyebrow {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+
+      h1 {
+        font-size: clamp(44px, 5.6vw, 76px);
+        font-weight: 700;
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+        margin: 0 0 32px;
+      }
+
+      h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+        margin: 0 0 12px;
+      }
+
+      p { margin: 0; }
+
+      /* Layout */
+      section {
+        padding: var(--gap) 0;
+        border-top: 1px solid var(--fg);
+      }
+
+      .hero { border-top: 0; }
+      .hero p { font-size: 19px; max-width: 640px; }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+        gap: 64px;
+        margin-bottom: 72px;
+      }
+
+      .section-head p { font-size: 19px; max-width: 520px; }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 64px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid var(--fg);
+        padding-top: 32px;
+      }
+
+      .card-icon {
+        display: block;
+        font-size: 28px;
+        line-height: 1;
+        margin-bottom: 24px;
+      }
+
+      .card p { font-size: 16px; }
+
+      .product-link {
+        display: inline-block;
+        margin-top: 20px;
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .coming-soon {
+        border-top: 1px solid var(--fg);
+        padding-top: 32px;
+        font-size: 16px;
+      }
+
+      .coming-soon a {
+        display: inline-block;
+        margin-top: 20px;
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--fg);
+        color: var(--bg);
+        padding: 48px 0;
+        font-size: 13px;
+      }
+
+      @media (max-width: 900px) {
+        :root { --gap: 80px; }
+
+        .section-head,
+        .product-grid { grid-template-columns: 1fr; }
+
+        .section-head { gap: 24px; margin-bottom: 48px; }
+        .product-grid { gap: 48px; }
+        .nav-links { display: none; }
+        .hero p { font-size: 18px; }
+        .pill { padding: 8px 12px; font-size: 11px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a href="index.html" class="brand" aria-label="QuantaPrism Network home">
+          <img class="brand-mark" src="assets/quantaprism.png" alt="QuantaPrism Network logo" />
+          <span class="brand-text">
+            <strong>QuantaPrism</strong>
+            <span>Products</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Product categories" id="category-nav"></nav>
+
+        <a class="pill" href="index.html">Home</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="eyebrow">Products</div>
+        <h1>QuantaPrism products.</h1>
+        <p>
+          Software you can run in your browser today, with hardware and other products to follow. Open a product to use it
+          here on quantaprism.com, signed in with your own account.
+        </p>
+      </section>
+
+      <div id="categories"></div>
+
+      <noscript>
+        <section>
+          <h2>Software products</h2>
+          <p>
+            <a class="product-link" href="https://app.106-51-128-210.sslip.io/">GenAI Video Studio</a> ·
+            <a class="product-link" href="https://buildos.106-51-128-210.sslip.io/">AIBuildOS</a> ·
+            <a class="product-link" href="https://ixmesh.106-51-128-210.sslip.io/">iXFlexTopology</a>
+          </p>
+        </section>
+      </noscript>
+    </main>
+
+    <footer>
+      <div class="container">© 2026 QuantaPrism Network. Software networking, embedded systems, automation, and transformation.</div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script>
+      (function () {
+        const nav = document.getElementById("category-nav");
+        const root = document.getElementById("categories");
+
+        function el(tag, className, text) {
+          const node = document.createElement(tag);
+          if (className) node.className = className;
+          if (text) node.textContent = text;
+          return node;
+        }
+
+        for (const category of window.QP_PRODUCT_CATEGORIES) {
+          const navLink = el("a", "", category.title);
+          navLink.href = "#" + category.id;
+          nav.appendChild(navLink);
+
+          const section = el("section");
+          section.id = category.id;
+
+          const head = el("div", "section-head");
+          const titles = el("div");
+          titles.appendChild(el("div", "eyebrow", category.title));
+          titles.appendChild(el("h2", "", category.heading));
+          head.appendChild(titles);
+          head.appendChild(el("p", "", category.intro));
+          section.appendChild(head);
+
+          if (category.products.length === 0) {
+            const soon = el("div", "coming-soon", "Coming soon.");
+            if (category.more) {
+              soon.appendChild(document.createElement("br"));
+              const more = el("a", "", category.more.label);
+              more.href = category.more.href;
+              soon.appendChild(more);
+            }
+            section.appendChild(soon);
+          } else {
+            const grid = el("div", "product-grid");
+            for (const product of category.products) {
+              const card = el("article", "card");
+              card.appendChild(el("div", "card-icon", product.icon || "◆"));
+              card.appendChild(el("h3", "", product.name));
+              card.appendChild(el("p", "", product.summary));
+              if (product.url || product.link) {
+                const open = el("a", "product-link", "Open " + product.name + " →");
+                open.href = product.url ? "product.html?id=" + encodeURIComponent(product.id) : product.link;
+                card.appendChild(open);
+              } else {
+                card.appendChild(el("p", "product-link", "Coming soon"));
+              }
+              grid.appendChild(card);
+            }
+            section.appendChild(grid);
+          }
+          root.appendChild(section);
+        }
+
+        // The sections exist only now, so jump to a #category link again.
+        if (location.hash) {
+          const target = document.getElementById(location.hash.slice(1));
+          if (target) target.scrollIntoView();
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuantaPrism | Product</title>
+    <style>
+      :root {
+        --bg: #000;
+        --fg: #fff;
+        --font: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        --bar: 56px;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body { height: 100%; }
+
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: var(--font);
+        font-size: 15px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      header {
+        flex: 0 0 var(--bar);
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 0 24px;
+        border-bottom: 1px solid var(--fg);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+      }
+
+      .brand img {
+        width: 28px;
+        height: 28px;
+        object-fit: cover;
+        filter: grayscale(1) contrast(1.2) invert(1);
+      }
+
+      .tabs {
+        display: flex;
+        gap: 20px;
+        flex: 1;
+        min-width: 0;
+        overflow-x: auto;
+        font-size: 14px;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+
+      .tabs::-webkit-scrollbar { display: none; }
+
+      .tabs a { padding: 4px 0; border-bottom: 2px solid transparent; }
+      .tabs a:hover { border-bottom-color: var(--fg); }
+      .tabs a[aria-current="page"] { font-weight: 600; border-bottom-color: var(--fg); }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid var(--fg);
+        padding: 6px 14px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .pill:hover { background: var(--fg); color: var(--bg); }
+
+      main { flex: 1; display: flex; min-height: 0; }
+
+      iframe {
+        flex: 1;
+        width: 100%;
+        border: 0;
+        background: #fff;
+      }
+
+      .message {
+        margin: auto;
+        max-width: 560px;
+        padding: 48px 24px;
+        text-align: center;
+        font-size: 17px;
+        line-height: 1.6;
+      }
+
+      .message a { font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+
+      @media (max-width: 700px) {
+        header { gap: 16px; padding: 0 16px; }
+        .brand span { display: none; }
+        .pill { padding: 6px 10px; font-size: 11px; }
+        .pill .long { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="products.html" aria-label="All QuantaPrism products">
+        <img src="assets/quantaprism.png" alt="" />
+        <span>QuantaPrism</span>
+      </a>
+      <nav class="tabs" id="tabs" aria-label="Products"></nav>
+      <a class="pill" id="open-tab" target="_blank" rel="noopener" hidden><span class="long">Open in&nbsp;</span>new tab ↗</a>
+    </header>
+
+    <main id="main"></main>
+
+    <script src="products.js"></script>
+    <script>
+      (function () {
+        const id = new URLSearchParams(location.search).get("id");
+        const found = window.qpFindProduct(id);
+        const main = document.getElementById("main");
+
+        if (!found || !found.product.url) {
+          const msg = document.createElement("div");
+          msg.className = "message";
+          msg.textContent = "This product is not available. ";
+          const back = document.createElement("a");
+          back.href = "products.html";
+          back.textContent = "See all products";
+          msg.appendChild(back);
+          main.appendChild(msg);
+          return;
+        }
+
+        const { category, product } = found;
+        document.title = "QuantaPrism | " + product.name;
+
+        // Tabs for the other products in the same category.
+        const tabs = document.getElementById("tabs");
+        for (const p of category.products) {
+          if (!p.url) continue;
+          const a = document.createElement("a");
+          a.href = "product.html?id=" + encodeURIComponent(p.id);
+          a.textContent = p.name;
+          if (p.id === product.id) a.setAttribute("aria-current", "page");
+          tabs.appendChild(a);
+        }
+
+        // Payments and some browsers' privacy settings work better outside a frame.
+        const openTab = document.getElementById("open-tab");
+        openTab.href = product.url;
+        openTab.hidden = false;
+
+        const frame = document.createElement("iframe");
+        frame.src = product.url;
+        frame.title = product.name;
+        frame.allow = "fullscreen; clipboard-read; clipboard-write; payment; autoplay";
+        main.appendChild(frame);
+      })();
+    </script>
+  </body>
+</html>
