@@ -95,6 +95,8 @@
 
       .pill:hover { background: var(--black); color: var(--white); }
 
+      .nav-actions { display: flex; gap: 8px; }
+
       /* Type */
       .eyebrow {
         font-size: 12px;
@@ -431,6 +433,12 @@
         .stat strong { font-size: 17px; }
         .pill { padding: 8px 12px; font-size: 11px; }
       }
+
+      @media (max-width: 480px) {
+        .brand span { display: none; }
+        .nav-actions { gap: 6px; }
+        .pill { padding: 8px 10px; }
+      }
     </style>
   </head>
   <body>
@@ -442,7 +450,6 @@
         </a>
 
         <nav class="nav-links" aria-label="Main navigation">
-          <a href="products.html">Products</a>
           <a href="#expertise">Expertise</a>
           <a href="#stack">Stack</a>
           <a href="#solutions">Solutions</a>
@@ -450,7 +457,10 @@
           <a href="#contact">Contact</a>
         </nav>
 
-        <a href="#portfolio" class="pill" aria-label="View software and hardware portfolios">Portfolios</a>
+        <div class="nav-actions">
+          <a href="products.html" class="pill" aria-label="View QuantaPrism products">Products</a>
+          <a href="#portfolio" class="pill" aria-label="View software and hardware portfolios">Portfolios</a>
+        </div>
       </div>
     </header>
 
