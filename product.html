@@ -85,6 +85,15 @@
 
       .pill:hover { background: var(--fg); color: var(--bg); }
 
+      .demo-bar {
+        flex: 0 0 auto;
+        padding: 6px 24px;
+        background: #422006;
+        color: #fde68a;
+        font-size: 13px;
+        text-align: center;
+      }
+
       main { flex: 1; display: flex; min-height: 0; }
 
       iframe {
@@ -123,6 +132,8 @@
       <a class="pill" id="open-tab" target="_blank" rel="noopener" hidden><span class="long">Open in&nbsp;</span>new tab ↗</a>
     </header>
 
+    <div class="demo-bar" id="demoBar" hidden>Demo mode: payments run in Razorpay test mode, so no real money is charged.</div>
+
     <main id="main"></main>
 
     <script src="products.js"></script>
@@ -145,6 +156,7 @@
         }
 
         const { category, product } = found;
+        document.getElementById("demoBar").hidden = window.QP_PAYMENTS_MODE !== "test";
         document.title = "QuantaPrism | " + product.name;
 
         // Tabs for the other products in the same category.

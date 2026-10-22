@@ -1,0 +1,86 @@
+/* Shared style of the policy and contact pages (terms, privacy, refund, contact). */
+:root {
+  --black: #000;
+  --white: #fff;
+  --muted: #555;
+  --font: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+.container { width: min(820px, calc(100% - 48px)); margin: 0 auto; }
+
+header { border-bottom: 1px solid var(--black); }
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.brand img { width: 36px; height: 36px; object-fit: cover; filter: grayscale(1) contrast(1.2); }
+
+.nav-links { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; }
+.nav-links a { text-decoration: none; }
+.nav-links a:hover, .nav-links a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
+
+main { padding: 64px 0 96px; }
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+h1 { font-size: clamp(36px, 5vw, 52px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 16px; }
+h2 { font-size: 22px; letter-spacing: -0.01em; margin: 48px 0 12px; }
+p, li { max-width: 72ch; }
+ul { padding-left: 22px; }
+li { margin: 6px 0; }
+
+.updated { color: var(--muted); font-size: 14px; margin-bottom: 40px; }
+
+.notice {
+  border: 1px solid var(--black);
+  padding: 16px 20px;
+  margin: 32px 0;
+  font-size: 15px;
+}
+
+table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 12px 0; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid #ddd; }
+th { font-weight: 600; width: 34%; }
+
+/* Details the owner must fill in before publishing: impossible to miss. */
+mark.fill { background: #fde047; color: #000; padding: 0 4px; font-weight: 600; }
+
+footer { background: var(--black); color: var(--white); padding: 40px 0; font-size: 13px; }
+footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+footer a { color: var(--white); margin-right: 16px; }

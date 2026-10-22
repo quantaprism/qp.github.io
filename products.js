@@ -6,6 +6,11 @@
 //
 // The framed products run on QuantaPrism's server (QPrismGoLive/golive/Caddyfile),
 // which allows only this site to frame them.
+//
+// Payments: "test" while Razorpay runs in test mode (no real money); the product
+// pages then show a demo-mode banner. Set to "live" once the Razorpay account is activated.
+window.QP_PAYMENTS_MODE = "test";
+
 window.QP_PRODUCT_CATEGORIES = [
   {
     id: "software",
