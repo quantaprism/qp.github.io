@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="QuantaPrism delivers software networking expertise across Layer 1 to Layer 4, customer operating systems, network OS, routing stack, SONiC, FRR, Linux Kernel, and OpenConfig-driven telemetry and configuration, plus hardware design: board design, IoT devices, SoC platforms, and AI-assisted PCB design."
+      content="QuantaPrism delivers software networking expertise across Layer 1 to Layer 4, customer operating systems, network OS, routing stack, SONiC, FRR, Linux Kernel, and OpenConfig-driven telemetry and configuration, plus hardware design: board design, IoT devices, SoC platforms, and AI-assisted PCB design. Our products: GenAI Video Studio (AI media in Indian languages), AIBuildOS (network OS image builds), iXFlexTopology (RFC testing of network topologies), and DemoBot AI (automatic product demo videos and chat bots)."
     />
-    <title>QuantaPrism | Software Networking Expertise</title>
+    <title>QuantaPrism | Software Networking &amp; AI Products</title>
     <style>
       :root {
         --black: #000;
@@ -284,7 +284,52 @@
 
       .feature-card p,
       .solution-card p,
-      .portfolio-item p { font-size: 16px; }
+      .portfolio-item p,
+      .product-card p { font-size: 16px; }
+
+      /* Products */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 64px;
+      }
+
+      .product-card {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid var(--black);
+        padding-top: 32px;
+      }
+
+      .product-card .tag {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+
+      .chip-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 24px;
+      }
+
+      .chip {
+        border: 1px solid var(--black);
+        padding: 4px 10px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .product-link {
+        margin-top: 24px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .product-link:hover { text-decoration: underline; }
 
       /* Portfolio choice */
       .portfolio-choice {
@@ -415,6 +460,7 @@
         .highlight-row,
         .contact-card,
         .grid-3,
+        .grid-2,
         .layer-matrix,
         .portfolio-spotlight,
         .portfolio-choice { grid-template-columns: 1fr; }
@@ -423,7 +469,7 @@
         .choice h3 { font-size: 26px; }
 
         .hero, .highlight-row, .contact-card { gap: 56px; }
-        .grid-3, .portfolio-spotlight, .layer-matrix { gap: 48px; }
+        .grid-3, .grid-2, .portfolio-spotlight, .layer-matrix { gap: 48px; }
         .section-intro { gap: 24px; margin-bottom: 56px; }
         .highlight-row { margin-top: 72px; }
 
@@ -452,7 +498,9 @@
         </a>
 
         <nav class="nav-links" aria-label="Main navigation">
+          <a href="#products">Products</a>
           <a href="#expertise">Expertise</a>
+          <a href="#ai">AI</a>
           <a href="#stack">Stack</a>
           <a href="#solutions">Solutions</a>
           <a href="#telemetry">Telemetry</a>
@@ -469,15 +517,21 @@
     <main id="top" class="container">
       <section class="hero">
         <div>
-          <div class="eyebrow">Software &amp; hardware engineering company</div>
-          <h1>Resilient networking software and hardware design, from Layer 1 to Layer 3.</h1>
+          <div class="eyebrow">Software, AI &amp; hardware engineering company</div>
+          <h1>Resilient networking software, AI products, and hardware design.</h1>
           <p>
             QuantaPrism helps enterprises, cloud operators, and networking teams design,
             validate, and optimize the software stack behind modern networks — from silicon-facing
             physical interfaces to application-aware routing and policy enforcement.
+            We turn that expertise into products you can use in your browser: GenAI Video Studio,
+            AIBuildOS, iXFlexTopology, and DemoBot AI.
             On the hardware side, we design the boards behind connected products — board design,
             IoT devices, System on Chip (SoC) platforms, and PCB design, including AI-assisted PCB design.
           </p>
+          <div class="cta-row">
+            <a class="button primary" href="#products">Our products</a>
+            <a class="button secondary" href="#portfolio">Portfolios</a>
+          </div>
         </div>
 
         <div class="hero-card" aria-label="Networking stack overview">
@@ -513,6 +567,101 @@
               <span>Routing expertise</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="products">
+        <div class="section-intro">
+          <div>
+            <div class="eyebrow">Products</div>
+            <h2>Four products built from our networking, Linux, and AI skills.</h2>
+          </div>
+          <p>
+            Each product runs on QuantaPrism's own servers and opens right here on quantaprism.com.
+            Sign in with your own account and try it in your browser.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="product-card">
+            <div class="icon" aria-hidden="true">▶</div>
+            <span class="tag">Generative AI media</span>
+            <h3>GenAI Video Studio</h3>
+            <p>
+              An AI media suite: text to video and storyboards, speech and character voices, translation
+              across Indian languages, transcription, video dubbing, and talking AI avatars.
+            </p>
+            <div class="chip-wrap" aria-label="Skills">
+              <span class="chip">Llama story planning</span>
+              <span class="chip">Kokoro &amp; Indic Parler-TTS</span>
+              <span class="chip">Whisper transcription</span>
+              <span class="chip">MADLAD-400 translation</span>
+              <span class="chip">SadTalker avatars</span>
+              <span class="chip">FFmpeg</span>
+              <span class="chip">Indian languages</span>
+            </div>
+            <a class="product-link" href="product.html?id=genai-video-studio">Open GenAI Video Studio →</a>
+          </article>
+
+          <article class="product-card">
+            <div class="icon" aria-hidden="true">▣</div>
+            <span class="tag">Network OS builds</span>
+            <h3>AIBuildOS</h3>
+            <p>
+              Build network operating system images as ONIE installers from the web, a REST API or a CLI,
+              then boot-test them in a QEMU virtual switch — with build times reported per module.
+            </p>
+            <div class="chip-wrap" aria-label="Skills">
+              <span class="chip">ONIE</span>
+              <span class="chip">Bazel</span>
+              <span class="chip">Linux kernel &amp; BusyBox</span>
+              <span class="chip">FRR</span>
+              <span class="chip">Debian / Ubuntu / OpenWrt</span>
+              <span class="chip">FreeRTOS</span>
+              <span class="chip">QEMU boot test</span>
+              <span class="chip">REST API &amp; CLI</span>
+            </div>
+            <a class="product-link" href="product.html?id=aibuildos">Open AIBuildOS →</a>
+          </article>
+
+          <article class="product-card">
+            <div class="icon" aria-hidden="true">◈</div>
+            <span class="tag">Network testing</span>
+            <h3>iXFlexTopology</h3>
+            <p>
+              Design network topologies, deploy them as FRR / VPP sandboxes, and test them against RFC
+              sections, with generated configuration, traffic tests, an AI debug agent, and PDF / JSON reports.
+            </p>
+            <div class="chip-wrap" aria-label="Skills">
+              <span class="chip">Topology design</span>
+              <span class="chip">FRR &amp; VPP config</span>
+              <span class="chip">RFC conformance</span>
+              <span class="chip">TRex traffic</span>
+              <span class="chip">Kubernetes &amp; Multus</span>
+              <span class="chip">MPLS / VPN</span>
+              <span class="chip">AI debug agent</span>
+            </div>
+            <a class="product-link" href="product.html?id=ixflextopology">Open iXFlexTopology →</a>
+          </article>
+
+          <article class="product-card">
+            <div class="icon" aria-hidden="true">◉</div>
+            <span class="tag">AI product demos</span>
+            <h3>DemoBot AI</h3>
+            <p>
+              Give it your website: it explores the features and makes a narrated demo video with subtitles,
+              a tutorial and a PDF guide, plus a live chat bot for your visitors.
+            </p>
+            <div class="chip-wrap" aria-label="Skills">
+              <span class="chip">Playwright browser automation</span>
+              <span class="chip">LLM agents (Ollama)</span>
+              <span class="chip">Piper narration</span>
+              <span class="chip">Whisper subtitles</span>
+              <span class="chip">FFmpeg video</span>
+              <span class="chip">Live chat bot</span>
+            </div>
+            <a class="product-link" href="product.html?id=demobot-ai">Open DemoBot AI →</a>
+          </article>
         </div>
       </section>
 
@@ -603,6 +752,49 @@
             <p>
               Architecture and optimization for routing stacks, protocol behavior, route policy, and control
               plane resiliency across scale and multi-vendor deployments.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ai">
+        <div class="section-intro">
+          <div>
+            <div class="eyebrow">AI &amp; platform engineering</div>
+            <h2>The skills behind our products.</h2>
+          </div>
+          <p>
+            Our products combine open AI models, browser and network automation, and Kubernetes-hosted
+            services that we build, run, and operate ourselves.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="feature-card">
+            <div class="icon" aria-hidden="true">♪</div>
+            <h3>Generative AI, speech &amp; video</h3>
+            <p>
+              Text-to-video and storyboards, neural speech in Indian languages, transcription, machine translation,
+              dubbing, and talking avatars, built on open models such as Llama, Whisper, Kokoro, Indic Parler-TTS,
+              MADLAD-400, and SadTalker, with FFmpeg for video.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon" aria-hidden="true">⚙</div>
+            <h3>AI agents &amp; automation</h3>
+            <p>
+              Local LLM agents (Ollama) that explore websites with Playwright, explain network test failures and recover
+              setups, write tutorials and guides, and answer visitors as a live chat bot.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon" aria-hidden="true">⧉</div>
+            <h3>Build, test &amp; SaaS platforms</h3>
+            <p>
+              Bazel-based NOS image builds with ONIE installers and QEMU boot tests, FRR / VPP sandboxes on Kubernetes with
+              Multus, RFC conformance and TRex traffic testing, plus sign-in, credits, and online payments.
             </p>
           </article>
         </div>
@@ -733,10 +925,11 @@
         <div class="contact-card">
           <div>
             <div class="eyebrow">QuantaPrism</div>
-            <h3>Software networking expertise for modern infrastructure.</h3>
+            <h3>Software networking expertise and AI products for modern infrastructure.</h3>
             <p>
               Active contributor to SONiC, FRR, and the Linux Kernel ecosystem, with a focus on routing stack,
-              platform enablement, and reliable device configuration and telemetry systems.
+              platform enablement, and reliable device configuration and telemetry systems — and the team behind
+              GenAI Video Studio, AIBuildOS, iXFlexTopology, and DemoBot AI.
             </p>
           </div>
 
@@ -750,7 +943,7 @@
 
     <footer>
       <div class="container">
-        © 2026 QuantaPrism. Software networking expertise across Layer 1 to Layer 4.
+        © 2026 QuantaPrism. Software networking expertise across Layer 1 to Layer 4, and AI products.
         <nav class="policy-links" aria-label="Policies"><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refund.html">Refunds</a> · <a href="contact.html">Contact</a></nav>
       </div>
     </footer>
