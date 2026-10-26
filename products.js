@@ -40,7 +40,7 @@ window.QP_PRODUCT_CATEGORIES = [
         icon: "◈",
         summary:
           "Design network topologies, deploy them as FRR / VPP sandboxes, and test them against RFC sections with generated configuration and reports.",
-        url: "https://ixmesh.106-51-128-210.sslip.io/",
+        url: "https://ixmesh.106-51-128-210.sslip.io/dashboard",
       },
       {
         id: "demobot-ai",
