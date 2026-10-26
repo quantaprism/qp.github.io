@@ -50,6 +50,14 @@ window.QP_PRODUCT_CATEGORIES = [
           "Give it your website: it explores the features and makes a narrated demo video with subtitles, a tutorial and a PDF guide, plus a live chat bot for your visitors.",
         url: "https://demobot.106-51-128-210.sslip.io/",
       },
+      {
+        id: "demobot-acadtutorial",
+        name: "DemoBot AcadTutorial",
+        icon: "✎",
+        summary:
+          "Your own AI academy: type a topic and get a complete course with lessons, quizzes, flashcards and narration, then invite students and track their progress and certificates.",
+        url: "https://acad.106-51-128-210.sslip.io/",
+      },
     ],
   },
   {
