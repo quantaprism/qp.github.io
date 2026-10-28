@@ -20,7 +20,7 @@ window.QP_PRODUCT_CATEGORIES = [
     products: [
       {
         id: "genai-video-studio",
-        name: "GenAI Video Studio",
+        name: "CinefyAI",
         icon: "▶",
         summary:
           "AI media suite: text to video, speech and voices, translation across Indian languages, transcription, and talking AI avatars.",
@@ -36,7 +36,7 @@ window.QP_PRODUCT_CATEGORIES = [
       },
       {
         id: "ixflextopology",
-        name: "iXFlexTopology",
+        name: "NetifyAI (VPP-FRR RFC Sandbox Lab)",
         icon: "◈",
         summary:
           "Design network topologies, deploy them as FRR / VPP sandboxes, and test them against RFC sections with generated configuration and reports.",
@@ -44,7 +44,7 @@ window.QP_PRODUCT_CATEGORIES = [
       },
       {
         id: "demobot-ai",
-        name: "DemoBot AI",
+        name: "ShowifyAI",
         icon: "◉",
         summary:
           "Give it your website: it explores the features and makes a narrated demo video with subtitles, a tutorial and a PDF guide, plus a live chat bot for your visitors.",
@@ -52,7 +52,7 @@ window.QP_PRODUCT_CATEGORIES = [
       },
       {
         id: "demobot-acadtutorial",
-        name: "DemoBot AcadTutorial",
+        name: "ScormifyAI",
         icon: "✎",
         summary:
           "Your own AI academy: type a topic and get a complete course with lessons, quizzes, flashcards and narration, then invite students and track their progress and certificates.",
