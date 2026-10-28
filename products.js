@@ -58,6 +58,14 @@ window.QP_PRODUCT_CATEGORIES = [
           "Your own AI academy: type a topic and get a complete course with lessons, quizzes, flashcards and narration, then invite students and track their progress and certificates.",
         url: "https://acad.106-51-128-210.sslip.io/",
       },
+      {
+        id: "codifyai",
+        name: "CodifyAI",
+        icon: "⌘",
+        summary:
+          "Describe a task and get working, tested code in Python, Go, JavaScript/TypeScript, Java or C/C++; find and fix bugs, trace how a codebase flows and see its architecture as diagrams.",
+        url: "https://code.106-51-128-210.sslip.io/",
+      },
     ],
   },
   {
