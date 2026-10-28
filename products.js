@@ -28,7 +28,7 @@ window.QP_PRODUCT_CATEGORIES = [
       },
       {
         id: "aibuildos",
-        name: "AIBuildOS",
+        name: "OSifyAI (ONIE Bare-Metal Build Lab)",
         icon: "▣",
         summary:
           "Build network operating system images as ONIE installers from the web, a REST API or a CLI, then boot-test them in a QEMU virtual switch.",
