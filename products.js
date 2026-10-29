@@ -66,6 +66,14 @@ window.QP_PRODUCT_CATEGORIES = [
           "Describe a task and get working, tested code in Python, Go, JavaScript/TypeScript, Java or C/C++; find and fix bugs, trace how a codebase flows and see its architecture as diagrams.",
         url: "https://code.106-51-128-210.sslip.io/",
       },
+      {
+        id: "bookifyai",
+        name: "BookifyAI",
+        icon: "❦",
+        summary:
+          "Turn a topic, a PDF or a SCORM course into a book, and get a ready-to-upload Kindle kit: the EPUB eBook, the print interior and cover PDFs, and the listing details for Amazon KDP.",
+        url: "https://book.106-51-128-210.sslip.io/",
+      },
     ],
   },
   {
