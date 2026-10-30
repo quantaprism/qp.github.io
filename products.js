@@ -74,6 +74,14 @@ window.QP_PRODUCT_CATEGORIES = [
           "Turn a topic, a PDF or a SCORM course into a book, and get a ready-to-upload Kindle kit: the EPUB eBook, the print interior and cover PDFs, and the listing details for Amazon KDP.",
         url: "https://book.106-51-128-210.sslip.io/",
       },
+      {
+        id: "kernelifyai",
+        name: "KernelifyAI",
+        icon: "⚙",
+        summary:
+          "Paste a kernel oops, panic or KASAN report and get the faulting line in the source and a plain explanation; crash, trace and debug real Linux kernels in live lab VMs with gdb, kgdb, crash, drgn and bpftrace.",
+        url: "https://kernel.106-51-128-210.sslip.io/",
+      },
     ],
   },
   {
