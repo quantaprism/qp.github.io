@@ -76,10 +76,10 @@ window.QP_PRODUCT_CATEGORIES = [
       },
       {
         id: "kernelifyai",
-        name: "KernelifyAI",
+        name: "KernelifyAI (Kernel Debug & VPP-FRR Packet Trace Lab)",
         icon: "⚙",
         summary:
-          "Paste a kernel oops, panic or KASAN report and get the faulting line in the source and a plain explanation; crash, trace and debug real Linux kernels in live lab VMs with gdb, kgdb, crash, drgn and bpftrace.",
+          "Trace packets through the Linux kernel and relate them to FRR (OSPF, BGP, BFD) and VPP: see every kernel function a packet passes, the daemon that receives it and why it is dropped. Debug live kernels with gdb, kgdb, ftrace and bpftrace, analyse oopses, dmesg and vmcore memory dumps to the faulting source line.",
         url: "https://kernel.106-51-128-210.sslip.io/",
       },
     ],
