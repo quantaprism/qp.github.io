@@ -143,10 +143,10 @@
         const found = window.qpFindProduct(id);
         const main = document.getElementById("main");
 
-        if (!found || !found.product.url) {
+        if (!found || !found.product.url || found.product.comingSoon) {
           const msg = document.createElement("div");
           msg.className = "message";
-          msg.textContent = "This product is not available. ";
+          msg.textContent = found && found.product.comingSoon ? found.product.name + " is coming soon. " : "This product is not available. ";
           const back = document.createElement("a");
           back.href = "products.html";
           back.textContent = "See all products";
@@ -162,7 +162,7 @@
         // Tabs for the other products in the same category.
         const tabs = document.getElementById("tabs");
         for (const p of category.products) {
-          if (!p.url) continue;
+          if (!p.url || p.comingSoon) continue;
           const a = document.createElement("a");
           a.href = "product.html?id=" + encodeURIComponent(p.id);
           a.textContent = p.name;
