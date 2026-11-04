@@ -24,7 +24,7 @@ window.QP_PRODUCT_CATEGORIES = [
         icon: "▶",
         summary:
           "AI media suite: text to video, speech and voices, translation across Indian languages, transcription, and talking AI avatars.",
-        url: "https://app.106-51-128-210.sslip.io/",
+        url: "https://app.quantaprism.com/",
       },
       {
         id: "aibuildos",
@@ -32,7 +32,7 @@ window.QP_PRODUCT_CATEGORIES = [
         icon: "▣",
         summary:
           "Build network operating system images as ONIE installers from the web, a REST API or a CLI, then boot-test them in a QEMU virtual switch.",
-        url: "https://buildos.106-51-128-210.sslip.io/",
+        url: "https://buildos.quantaprism.com/",
       },
       {
         id: "ixflextopology",
@@ -40,7 +40,7 @@ window.QP_PRODUCT_CATEGORIES = [
         icon: "◈",
         summary:
           "Design network topologies, deploy them as FRR / VPP sandboxes, and test them against RFC sections with generated configuration and reports.",
-        url: "https://ixmesh.106-51-128-210.sslip.io/dashboard",
+        url: "https://network.quantaprism.com/dashboard",
       },
       {
         id: "demobot-ai",
@@ -48,7 +48,7 @@ window.QP_PRODUCT_CATEGORIES = [
         icon: "◉",
         summary:
           "Give it your website: it explores the features and makes a narrated demo video with subtitles, a tutorial and a PDF guide, plus a live chat bot for your visitors.",
-        url: "https://demobot.106-51-128-210.sslip.io/",
+        url: "https://demobot.quantaprism.com/",
       },
       {
         id: "demobot-acadtutorial",
@@ -56,7 +56,7 @@ window.QP_PRODUCT_CATEGORIES = [
         icon: "✎",
         summary:
           "Your own AI academy: type a topic and get a complete course with lessons, quizzes, flashcards and narration, then invite students and track their progress and certificates.",
-        url: "https://acad.106-51-128-210.sslip.io/",
+        url: "https://acad.quantaprism.com/",
       },
       {
         id: "codifyai",
@@ -64,7 +64,7 @@ window.QP_PRODUCT_CATEGORIES = [
         icon: "⌘",
         summary:
           "Describe a task and get working, tested code in Python, Go, JavaScript/TypeScript, Java or C/C++; find and fix bugs, trace how a codebase flows and see its architecture as diagrams.",
-        url: "https://code.106-51-128-210.sslip.io/",
+        url: "https://code.quantaprism.com/",
       },
       {
         id: "bookifyai",
@@ -72,7 +72,7 @@ window.QP_PRODUCT_CATEGORIES = [
         icon: "❦",
         summary:
           "Turn a topic, a PDF or a SCORM course into a book, and get a ready-to-upload Kindle kit: the EPUB eBook, the print interior and cover PDFs, and the listing details for Amazon KDP.",
-        url: "https://book.106-51-128-210.sslip.io/",
+        url: "https://book.quantaprism.com/",
       },
       {
         id: "kernelifyai",
@@ -80,7 +80,7 @@ window.QP_PRODUCT_CATEGORIES = [
         icon: "⚙",
         summary:
           "Trace packets through the Linux kernel and relate them to FRR (OSPF, BGP, BFD) and VPP: see every kernel function a packet passes, the daemon that receives it and why it is dropped. Debug live kernels with gdb, kgdb, ftrace and bpftrace, build and debug your own kernel module in the lab, capture crashes with kdump as on a server, and analyse oopses, dmesg and vmcore memory dumps to the faulting source line.",
-        url: "https://kernel.106-51-128-210.sslip.io/",
+        url: "https://kernel.quantaprism.com/",
       },
     ],
   },
