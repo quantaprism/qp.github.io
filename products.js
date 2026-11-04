@@ -23,8 +23,8 @@ window.QP_PRODUCT_CATEGORIES = [
         name: "CinefyAI",
         icon: "▶",
         summary:
-          "AI media suite: text to video, speech and voices, translation across Indian languages, transcription, and talking AI avatars.",
-        url: "https://app.quantaprism.com/",
+          "Private AI video studio with six separate studios: songs, stories, animation and avatars, explainers, voice and dubbing, and editing. One sign-in and one credit wallet for all of them.",
+        url: "https://cinefy.quantaprism.com/",
       },
       {
         id: "aibuildos",
@@ -81,6 +81,62 @@ window.QP_PRODUCT_CATEGORIES = [
         summary:
           "Trace packets through the Linux kernel and relate them to FRR (OSPF, BGP, BFD) and VPP: see every kernel function a packet passes, the daemon that receives it and why it is dropped. Debug live kernels with gdb, kgdb, ftrace and bpftrace, build and debug your own kernel module in the lab, capture crashes with kdump as on a server, and analyse oopses, dmesg and vmcore memory dumps to the faulting source line.",
         url: "https://kernel.quantaprism.com/",
+      },
+    ],
+  },
+  {
+    id: "cinefy-studios",
+    title: "CinefyAI studios",
+    heading: "Six studios, one CinefyAI.",
+    intro: "Open only the studio you need. Your sign-in, credits and My Media library are shared across all of them.",
+    products: [
+      {
+        id: "cinefy-song",
+        name: "Song Studio",
+        icon: "♪",
+        summary:
+          "Turn your own lyrics into an original song and a short video with the words on screen, make karaoke and vocal-free tracks from your own song, and create sung kids rhymes as cartoons.",
+        url: "https://song.quantaprism.com/",
+      },
+      {
+        id: "cinefy-story",
+        name: "Story & Video Studio",
+        icon: "▶",
+        summary:
+          "Storyboards, narrated text-to-video, AI shots, photo stories, festival greetings, product photos and ads, and video merging.",
+        url: "https://story.quantaprism.com/",
+      },
+      {
+        id: "cinefy-animate",
+        name: "Animation & Avatar Studio",
+        icon: "◐",
+        summary:
+          "Cartoon and 3D animation, talking AI avatars, conversations of 2 to 4 people, photo stories, new looks with your own face, old photo restore and kids rhymes.",
+        url: "https://animate.quantaprism.com/",
+      },
+      {
+        id: "cinefy-explain",
+        name: "Explainer Studio",
+        icon: "✦",
+        summary:
+          "Short, lively teaching videos with a lesson script you review, and notes, quizzes and SCORM courses from your class recordings, in English and Indian languages.",
+        url: "https://explain.quantaprism.com/",
+      },
+      {
+        id: "cinefy-dub",
+        name: "Voice & Dubbing Studio",
+        icon: "◍",
+        summary:
+          "Dub videos into Indian and world languages with a new voice and translated subtitles, lip-sync short clips, make natural voice-overs and clean podcast episodes, and turn your own book into an audiobook.",
+        url: "https://dub.quantaprism.com/",
+      },
+      {
+        id: "cinefy-edit",
+        name: "Edit & Publish",
+        icon: "✂",
+        summary:
+          "Transcribe, cut Shorts, burn subtitles, make thumbnails and social posts, add watermarks, strip metadata, compress images and restore old photos.",
+        url: "https://edit.quantaprism.com/",
       },
     ],
   },
