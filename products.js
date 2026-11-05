@@ -62,7 +62,6 @@ window.QP_PRODUCT_CATEGORIES = [
         summary:
           "Your own AI academy: type a topic and get a complete course with lessons, quizzes, flashcards and narration, then invite students and track their progress and certificates.",
         url: "https://acad.quantaprism.com/",
-        comingSoon: true,
       },
       {
         id: "codifyai",
