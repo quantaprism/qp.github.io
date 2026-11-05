@@ -26,7 +26,6 @@ window.QP_PRODUCT_CATEGORIES = [
         summary:
           "Private AI video studio with six separate studios: songs, stories, animation and avatars, explainers, voice and dubbing, and editing. One sign-in and one credit wallet for all of them.",
         url: "https://cinefy.quantaprism.com/",
-        comingSoon: true,
       },
       {
         id: "aibuildos",
@@ -105,7 +104,6 @@ window.QP_PRODUCT_CATEGORIES = [
         summary:
           "Turn your own lyrics into an original song and a short video with the words on screen, make karaoke and vocal-free tracks from your own song, and create sung kids rhymes as cartoons.",
         url: "https://song.quantaprism.com/",
-        comingSoon: true,
       },
       {
         id: "cinefy-story",
@@ -114,7 +112,6 @@ window.QP_PRODUCT_CATEGORIES = [
         summary:
           "Storyboards, narrated text-to-video, AI shots, photo stories, festival greetings, product photos and ads, and video merging.",
         url: "https://story.quantaprism.com/",
-        comingSoon: true,
       },
       {
         id: "cinefy-animate",
@@ -123,7 +120,6 @@ window.QP_PRODUCT_CATEGORIES = [
         summary:
           "Cartoon and 3D animation, talking AI avatars, conversations of 2 to 4 people, photo stories, new looks with your own face, old photo restore and kids rhymes.",
         url: "https://animate.quantaprism.com/",
-        comingSoon: true,
       },
       {
         id: "cinefy-explain",
@@ -132,7 +128,6 @@ window.QP_PRODUCT_CATEGORIES = [
         summary:
           "Short, lively teaching videos with a lesson script you review, and notes, quizzes and SCORM courses from your class recordings, in English and Indian languages.",
         url: "https://explain.quantaprism.com/",
-        comingSoon: true,
       },
       {
         id: "cinefy-dub",
@@ -141,7 +136,6 @@ window.QP_PRODUCT_CATEGORIES = [
         summary:
           "Dub videos into Indian and world languages with a new voice and translated subtitles, lip-sync short clips, make natural voice-overs and clean podcast episodes, and turn your own book into an audiobook.",
         url: "https://dub.quantaprism.com/",
-        comingSoon: true,
       },
       {
         id: "cinefy-edit",
@@ -150,7 +144,6 @@ window.QP_PRODUCT_CATEGORIES = [
         summary:
           "Transcribe, cut Shorts, burn subtitles, make thumbnails and social posts, add watermarks, strip metadata, compress images and restore old photos.",
         url: "https://edit.quantaprism.com/",
-        comingSoon: true,
       },
     ],
   },
